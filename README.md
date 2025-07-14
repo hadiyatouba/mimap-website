@@ -146,7 +146,7 @@ Pour contribuer :
 3. Commitez vos modifications (`git commit -am 'Ajout d’une nouvelle fonctionnalité'`)
 4. Poussez la branche (`git push origin feature/ma-nouvelle-fonctionnalite`)
 5. Ouvrez une Pull Request
-
+  
 ---
 
 ## Informations de contact

@@ -38,87 +38,87 @@ const Blog = () => {
   }
 
   return (
-    <section id="blog" className="py-20 bg-white">
+    <section id="blog" className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          {/* En-tête */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
+          {/* En-tête - Mobile first responsive */}
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-900 mb-4">
               Actualités et Blog
             </h2>
           </div>
 
-          {/* Carrousel d'articles */}
-          <div className="relative bg-white border border-gray-200 rounded-2xl p-8 shadow-lg">
-            {/* Navigation */}
+          {/* Carrousel d'articles - Mobile first responsive */}
+          <div className="relative bg-white border border-gray-200 rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg">
+            {/* Navigation - Responsive positioning */}
             <button
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-green-500 hover:bg-green-600 text-white rounded-full p-2 shadow-lg transition-all duration-300 hover:scale-110 z-10"
+              className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-green-500 hover:bg-green-600 text-white rounded-full p-1.5 sm:p-2 shadow-lg transition-all duration-300 hover:scale-110 z-10"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
 
             <button
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-green-500 hover:bg-green-600 text-white rounded-full p-2 shadow-lg transition-all duration-300 hover:scale-110 z-10"
+              className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-green-500 hover:bg-green-600 text-white rounded-full p-1.5 sm:p-2 shadow-lg transition-all duration-300 hover:scale-110 z-10"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
 
-            {/* Contenu de l'article */}
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              {/* Image à gauche */}
-              <div className="relative">
-                {/* Bordure verte décorative */}
-                <div className="absolute -top-4 -left-4 w-full h-full bg-green-500 rounded-lg z-0"></div>
-                <div className="relative z-10 bg-white p-4 rounded-lg shadow-lg">
+            {/* Contenu de l'article - Mobile first responsive layout */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
+              {/* Image - Mobile first responsive */}
+              <div className="relative order-1 md:order-1">
+                {/* Bordure verte décorative - Hidden on mobile */}
+                <div className="hidden sm:block absolute -top-2 sm:-top-4 -left-2 sm:-left-4 w-full h-full bg-green-500 rounded-lg z-0"></div>
+                <div className="relative z-10 bg-white p-2 sm:p-3 lg:p-4 rounded-lg shadow-lg">
                   <img 
                     src={articles[currentSlide].image} 
                     alt={articles[currentSlide].title}
-                    className="w-full h-64 object-cover rounded-lg"
+                    className="w-full h-48 sm:h-56 lg:h-64 object-cover rounded-lg"
                   />
                 </div>
               </div>
 
-              {/* Contenu à droite */}
-              <div className="space-y-6">
-                {/* Badge catégorie */}
+              {/* Contenu - Mobile first responsive */}
+              <div className="space-y-4 sm:space-y-6 order-2 md:order-2">
+                {/* Badge catégorie - Responsive sizing */}
                 <div className="inline-block">
-                  <span className="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                  <span className="bg-green-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold">
                     {articles[currentSlide].category}
                   </span>
                 </div>
 
-                {/* Titre */}
-                <h3 className="text-2xl md:text-3xl font-bold text-blue-900">
+                {/* Titre - Responsive text sizing */}
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-900">
                   {articles[currentSlide].title}
                 </h3>
 
-                {/* Description */}
-                <p className="text-gray-700 leading-relaxed">
+                {/* Description - Responsive text sizing */}
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   {articles[currentSlide].description}
                 </p>
 
-                {/* Date et bouton */}
-                <div className="space-y-4">
-                  <p className="text-gray-600 font-semibold">
+                {/* Date et bouton - Responsive spacing */}
+                <div className="space-y-3 sm:space-y-4">
+                  <p className="text-sm sm:text-base text-gray-600 font-semibold">
                     {articles[currentSlide].date}
                   </p>
                   
-                  <Button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg">
+                  <Button className="bg-green-600 hover:bg-green-700 text-white px-4 sm:px-6 py-2 rounded-lg text-sm sm:text-base w-full sm:w-auto">
                     Voir sur facebook
                   </Button>
                 </div>
               </div>
             </div>
 
-            {/* Indicateurs de slide */}
-            <div className="flex justify-center mt-8 space-x-2">
+            {/* Indicateurs de slide - Responsive spacing */}
+            <div className="flex justify-center mt-6 sm:mt-8 space-x-2">
               {articles.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                     index === currentSlide 
                       ? 'bg-blue-600 scale-125' 
                       : 'bg-gray-300 hover:bg-gray-400'
