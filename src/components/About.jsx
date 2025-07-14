@@ -12,7 +12,7 @@ const About = () => {
             <p className="text-xl text-blue-600 font-semibold mb-8">
               Cabinet MIMAP, votre partenaire pour la santé et le bien-être de toute la famille.
             </p>
-          </div>
+          </div> 
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -23,7 +23,7 @@ const About = () => {
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
                 Spécialistes dévoués à la santé et à la sérénité de toute la famille, quel que soit son âge, 
                 nous proposons des approches novatrices qui englobent à la fois les besoins familiaux et 
-                ceux des environnements professionnels.
+                ceux des environnements professionnels. 
               </p>
               
               <p className="text-lg text-gray-700 mb-8 leading-relaxed">
@@ -37,6 +37,7 @@ const About = () => {
                     <Heart className="w-8 h-8 text-blue-600" />
                   </div>
                   <p className="text-sm font-semibold text-gray-700">Bien-être familial</p>
+                  <p className="text-sm text-gray-500">Approches personnalisées pour chaque membre de la famille.</p>
                 </div>
                 
                 <div className="text-center">
