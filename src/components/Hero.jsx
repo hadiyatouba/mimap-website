@@ -1,45 +1,67 @@
 import { Button } from '@/components/ui/button'
-import { ArrowRight, Calendar } from 'lucide-react'
+import { Calendar, Phone } from 'lucide-react'
 
 const Hero = () => {
   return (
-    <section id="accueil" className="bg-gradient-to-br from-blue-50 to-white py-20">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+    <section id="accueil" className="relative min-h-[600px] bg-gradient-to-r from-gray-50 to-blue-50 overflow-hidden">
+      {/* Formes géométriques vertes */}
+      <div className="absolute inset-0">
+        {/* Grande forme verte à gauche */}
+        <div className="absolute -left-20 top-0 w-80 h-full bg-green-400 transform -skew-x-12 opacity-90"></div>
+        
+        {/* Forme verte à droite */}
+        <div className="absolute -right-32 top-20 w-96 h-96 bg-green-300 rounded-full opacity-70"></div>
+        <div className="absolute -right-20 bottom-0 w-64 h-64 bg-green-400 transform rotate-45 opacity-80"></div>
+      </div>
+
+      {/* Image du médecin en arrière-plan */}
+      <div className="absolute right-0 top-0 w-1/2 h-full">
+        <img 
+          src="/Image docteur.png" 
+          alt="Médecin MIMAP" 
+          className="w-full h-full object-cover object-left"
+        />
+      </div>
+
+      {/* Contenu principal */}
+      <div className="relative z-10 container mx-auto px-4 py-20">
+        <div className="max-w-2xl">
+          <h1 className="text-5xl md:text-6xl font-bold text-blue-900 mb-6 leading-tight">
             Votre santé,
-            <span className="text-blue-600 block">notre priorité</span>
+            <br />
+            <span className="text-blue-800">notre priorité</span>
           </h1>
           
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            MIMAP vous accompagne dans la médecine préventive, 
-            la santé familiale, la santé au travail et les formations en 
+          <p className="text-lg text-gray-700 mb-8 leading-relaxed max-w-lg">
+            MIMAP vous accompagne dans la médecine préventive,
+            la santé familiale, la santé au travail et les formations en
             premiers secours.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg"
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button
+              size="lg"
+              className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 text-lg rounded-lg shadow-lg"
             >
-              Découvrir MIMAP
-              <ArrowRight className="w-5 h-5 ml-2" />
+              <Phone className="w-5 h-5 mr-2" />
+              Prendre RDV
             </Button>
             
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 text-lg"
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-2 border-blue-800 text-blue-800 hover:bg-blue-900 hover:text-white px-8 py-3 text-lg rounded-lg"
             >
-              <Calendar className="w-5 h-5 mr-2" />
-              Prendre RDV
+              Découvrir MIMAP
             </Button>
           </div>
         </div>
       </div>
+
+      {/* Overlay pour améliorer la lisibilité du texte */}
+      <div className="absolute inset-0 bg-white bg-opacity-20"></div>
     </section>
   )
 }
 
 export default Hero
-

@@ -1,75 +1,76 @@
-import { Award, Users, Heart } from 'lucide-react'
-
 const About = () => {
   return (
-    <section id="apropos" className="py-20 bg-white">
+    <section id="apropos" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Qui sommes-nous ?
-            </h2>
-            <p className="text-xl text-blue-600 font-semibold mb-8">
-              Cabinet MIMAP, votre partenaire pour la santé et le bien-être de toute la famille.
-            </p>
-          </div> 
-
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Notre mission est de placer le bien-être des individus au cœur de toutes nos actions.
-              </p>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Contenu texte à gauche */}
+            <div className="space-y-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-8">
+                Qui sommes-nous ?
+              </h2>
               
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Spécialistes dévoués à la santé et à la sérénité de toute la famille, quel que soit son âge, 
-                nous proposons des approches novatrices qui englobent à la fois les besoins familiaux et 
-                ceux des environnements professionnels. 
-              </p>
-              
-              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                Notre équipe, certifiée par l'American Heart Association, collabore avec des institutions 
-                comme la Banque mondiale, Tasiast ou Aura Energy, pour construire un monde plus sain et sécurisé.
-              </p>
-
-              <div className="grid grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="bg-blue-100 rounded-full p-4 w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-                    <Heart className="w-8 h-8 text-blue-600" />
-                  </div>
-                  <p className="text-sm font-semibold text-gray-700">Bien-être familial</p>
-                  <p className="text-sm text-gray-500">Approches personnalisées pour chaque membre de la famille.</p>
-                </div>
+              <div className="space-y-4">
+                <p className="text-lg font-semibold text-gray-900 mb-6">
+                  Cabinet MIMAP, votre partenaire pour la santé
+                  <br />
+                  et le bien-être de toute la famille.
+                </p>
                 
-                <div className="text-center">
-                  <div className="bg-blue-100 rounded-full p-4 w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-                    <Award className="w-8 h-8 text-blue-600" />
-                  </div>
-                  <p className="text-sm font-semibold text-gray-700">Certifié AHA</p>
-                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  Notre mission est de placer le bien-être des individus au cœur de toutes nos actions. 
+                  Spécialistes dévoués à la santé et à la sérénité de toute la famille, quel que soit son âge, nous 
+                  proposons des approches novatrices qui englobent à la fois les besoins familiaux et ceux 
+                  des environnements professionnels.
+                </p>
                 
-                <div className="text-center">
-                  <div className="bg-blue-100 rounded-full p-4 w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-                    <Users className="w-8 h-8 text-blue-600" />
-                  </div>
-                  <p className="text-sm font-semibold text-gray-700">Équipe experte</p>
-                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  Notre équipe, certifiée par l'American Heart Association, collabore avec des institutions 
+                  comme la Banque mondiale, Tasiast ou Aura Energy, pour construire un monde plus sain et 
+                  sécurisé.
+                </p>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
-              <div className="text-center">
-                <div className="bg-white rounded-full p-6 w-24 h-24 mx-auto mb-6 flex items-center justify-center shadow-lg">
-                  <Heart className="w-12 h-12 text-blue-600" />
+            {/* Images à droite */}
+            <div className="relative">
+              {/* Forme géométrique bleue */}
+              <div className="absolute -top-8 -right-8 w-32 h-32 bg-blue-600 rounded-lg transform rotate-12 z-0"></div>
+              
+              {/* Image principale de l'équipe */}
+              <div className="relative z-10 mb-6">
+                <div className="bg-white p-4 rounded-lg shadow-lg">
+                  <img 
+                    src="/Rectangle 1.png" 
+                    alt="Équipe MIMAP" 
+                    className="w-full h-80 object-cover rounded-lg"
+                  />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Notre Vision
-                </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  Construire un monde plus sain et sécurisé en plaçant le bien-être 
-                  des individus au centre de toutes nos actions, avec des approches 
-                  novatrices et personnalisées.
-                </p>
               </div>
+
+              {/* Images secondaires */}
+              <div className="grid grid-cols-2 gap-4 relative z-10">
+                {/* Image de présentation */}
+                <div className="bg-white p-3 rounded-lg shadow-lg">
+                  <img 
+                    src="/Rectangle 2.png" 
+                    alt="Présentation MIMAP" 
+                    className="w-full h-32 object-cover rounded-lg"
+                  />
+                </div>
+                
+                {/* Image d'équipe secondaire */}
+                <div className="bg-white p-3 rounded-lg shadow-lg">
+                  <img 
+                    src="/Section Hero.png" 
+                    alt="Équipe médicale" 
+                    className="w-full h-32 object-cover rounded-lg"
+                  />
+                </div>
+              </div>
+
+              {/* Point vert décoratif */}
+              <div className="absolute bottom-4 right-4 w-6 h-6 bg-green-500 rounded-full z-20"></div>
             </div>
           </div>
         </div>
@@ -79,4 +80,3 @@ const About = () => {
 }
 
 export default About
-

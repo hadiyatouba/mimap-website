@@ -1,90 +1,130 @@
+import { useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { Calendar, ExternalLink, Quote } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const Blog = () => {
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  const articles = [
+    {
+      image: "/consultation-diabete.jpg",
+      category: "Prévention / Sensibilisation",
+      title: "Journée Portes Ouvertes avec SOS Diabète",
+      description: "Une journée de dépistage et de sensibilisation organisée par MIMAP en collaboration avec SOS Diabète, dédiée à la prévention du diabète.",
+      date: "24 avril 2025"
+    },
+    {
+      image: "/formation-secours.jpg",
+      category: "Formation",
+      title: "Formation en Premiers Secours",
+      description: "Nouvelle session de formation certifiée AHA pour les entreprises et particuliers.",
+      date: "15 mai 2025"
+    },
+    {
+      image: "/check-up-entreprise.jpg",
+      category: "Médecine du travail",
+      title: "Programme Check-up Entreprise",
+      description: "Lancement de notre nouveau programme de bilan de santé pour les employés.",
+      date: "30 mai 2025"
+    }
+  ]
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % articles.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + articles.length) % articles.length)
+  }
+
   return (
     <section id="blog" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
+          {/* En-tête */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
               Actualités et Blog
             </h2>
-            <p className="text-lg text-gray-600">
-              Prévention / Sensibilisation
-            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Article principal */}
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
-              <div className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold inline-block mb-6">
-                Événement à venir
-              </div>
-              
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Journée Portes Ouvertes avec SOS Diabète
-              </h3>
-              
-              <p className="text-gray-700 mb-6 leading-relaxed">
-                Une journée de dépistage et de sensibilisation organisée par MIMAP en collaboration 
-                avec SOS Diabète, dédiée à la prévention du diabète.
-              </p>
-              
-              <div className="flex items-center justify-between">
-                <div className="flex items-center text-blue-600 font-semibold">
-                  <Calendar className="w-5 h-5 mr-2" />
-                  24 avril 2025
-                </div>
-                
-                <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  Voir sur Facebook
-                </Button>
-              </div>
-            </div>
+          {/* Carrousel d'articles */}
+          <div className="relative bg-white border border-gray-200 rounded-2xl p-8 shadow-lg">
+            {/* Navigation */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-green-500 hover:bg-green-600 text-white rounded-full p-2 shadow-lg transition-all duration-300 hover:scale-110 z-10"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
 
-            {/* Témoignage */}
-            <div className="bg-white border-2 border-gray-100 rounded-2xl p-8">
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Témoignages et Avis
-                </h3>
-              </div>
-              
+            <button
+              onClick={nextSlide}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-green-500 hover:bg-green-600 text-white rounded-full p-2 shadow-lg transition-all duration-300 hover:scale-110 z-10"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+
+            {/* Contenu de l'article */}
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              {/* Image à gauche */}
               <div className="relative">
-                <Quote className="w-8 h-8 text-blue-600 mb-4" />
-                <blockquote className="text-lg text-gray-700 italic mb-6 leading-relaxed">
-                  "Nous voulons venir en aide aux personnes en situation difficile… les personnes 
-                  atteintes du diabète et de l'hypertension seront suivies par les spécialistes."
-                </blockquote>
-                
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-blue-600 font-bold text-lg">DF</span>
-                  </div>
-                  <div>
-                    <p className="font-bold text-gray-900">Dr Khadija Faye</p>
-                    <p className="text-blue-600 text-sm">Directrice MIMAP</p>
-                  </div>
+                {/* Bordure verte décorative */}
+                <div className="absolute -top-4 -left-4 w-full h-full bg-green-500 rounded-lg z-0"></div>
+                <div className="relative z-10 bg-white p-4 rounded-lg shadow-lg">
+                  <img 
+                    src={articles[currentSlide].image} 
+                    alt={articles[currentSlide].title}
+                    className="w-full h-64 object-cover rounded-lg"
+                  />
+                </div>
+              </div>
+
+              {/* Contenu à droite */}
+              <div className="space-y-6">
+                {/* Badge catégorie */}
+                <div className="inline-block">
+                  <span className="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    {articles[currentSlide].category}
+                  </span>
+                </div>
+
+                {/* Titre */}
+                <h3 className="text-2xl md:text-3xl font-bold text-blue-900">
+                  {articles[currentSlide].title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-700 leading-relaxed">
+                  {articles[currentSlide].description}
+                </p>
+
+                {/* Date et bouton */}
+                <div className="space-y-4">
+                  <p className="text-gray-600 font-semibold">
+                    {articles[currentSlide].date}
+                  </p>
+                  
+                  <Button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg">
+                    Voir sur facebook
+                  </Button>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Section galerie */}
-          <div className="mt-16 text-center">
-            <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Galerie MIMAP
-              </h3>
-              <p className="text-gray-700 mb-6">
-                Découvrez nos actions, notre équipe et nos infrastructures en images.
-              </p>
-              <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Voir plus sur Facebook
-              </Button>
+            {/* Indicateurs de slide */}
+            <div className="flex justify-center mt-8 space-x-2">
+              {articles.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentSlide 
+                      ? 'bg-blue-600 scale-125' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -94,4 +134,3 @@ const Blog = () => {
 }
 
 export default Blog
-

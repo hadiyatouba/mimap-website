@@ -1,123 +1,103 @@
 import { Button } from '@/components/ui/button'
-import { Phone, Stethoscope, Heart, Baby, Wind, Brain, Shield, Bug, Briefcase } from 'lucide-react'
+import { Heart } from 'lucide-react'
 
 const Services = () => {
   const services = [
     {
-      icon: Stethoscope,
+      image: "/Rectangle 1.png",
       title: "Médecine générale",
-      description: "Consultations pour tous les âges, suivi global de la santé",
-      color: "bg-blue-100 text-blue-600"
+      description: "Consultations pour tous les âges, suivi global de la santé"
     },
     {
-      icon: Heart,
+      image: "/Rectangle 1.png",
       title: "Médecine de famille",
-      description: "Approche holistique centrée sur le bien-être familial",
-      color: "bg-red-100 text-red-600"
+      description: "Approche holistique centrée sur le bien-être familial"
     },
     {
-      icon: Baby,
+      image: "/Rectangle 1.png",
       title: "Pédiatrie",
-      description: "Soins spécialisés pour nourrissons, enfants et adolescents",
-      color: "bg-pink-100 text-pink-600"
+      description: "Soins spécialisés pour nourrissons, enfants et adolescents"
     },
     {
-      icon: Wind,
+      image: "/Rectangle 1.png",
       title: "Kinésithérapie respiratoire",
-      description: "Rééducation des troubles respiratoires chez l'enfant et l'adulte",
-      color: "bg-green-100 text-green-600"
+      description: "Rééducation des troubles respiratoires chez l'enfant et l'adulte"
     },
     {
-      icon: Brain,
+      image: "/Rectangle 1.png",
       title: "Psychiatrie",
-      description: "Suivi psychologique, troubles mentaux, thérapies adaptées",
-      color: "bg-purple-100 text-purple-600"
+      description: "Suivi psychologique, troubles mentaux, thérapies adaptées"
     },
     {
-      icon: Shield,
+      image: "/Rectangle 1.png",
       title: "Urologie",
-      description: "Soins du système urinaire et santé masculine",
-      color: "bg-indigo-100 text-indigo-600"
+      description: "Soins du système urinaire et santé masculine"
     },
     {
-      icon: Bug,
+      image: "/Rectangle 1.png",
       title: "Infectiologie",
-      description: "Prévention, diagnostic et traitement des maladies infectieuses",
-      color: "bg-orange-100 text-orange-600"
+      description: "Prévention, diagnostic et traitement des maladies infectieuses"
     },
     {
-      icon: Briefcase,
+      image: "/Rectangle 1.png",
       title: "Médecine du travail",
-      description: "Suivi médical des employés, bilan pré-embauche (pre-employment check-up), prévention et sécurité en milieu professionnel.",
-      color: "bg-teal-100 text-teal-600"
+      description: "Suivi médical des employés, bilan pré-embauche (pre-employment check-up), prévention et sécurité en milieu professionnel"
     }
   ]
 
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
+          {/* En-tête */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-blue-900 mb-4">
               Nos Services Médicaux
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Une gamme complète de services médicaux pour répondre à tous vos besoins de santé
-            </p>
+            {/* Ligne verte décorative */}
+            <div className="w-24 h-1 bg-green-500 mx-auto"></div>
           </div>
 
+          {/* Grille des services */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => {
-              const IconComponent = service.icon
-              return (
-                <div 
-                  key={index}
-                  className="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-                >
-                  <div className={`rounded-full p-3 w-14 h-14 mb-4 ${service.color}`}>
-                    <IconComponent className="w-8 h-8" />
-                  </div>
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group"
+              >
+                {/* Image du service */}
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
                   
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {/* Icône coeur en overlay */}
+                  <div className="absolute bottom-4 right-4 bg-blue-600 rounded-full p-3 transform transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-700">
+                    <Heart className="w-6 h-6 text-white fill-current" />
+                  </div>
+                </div>
+
+                {/* Contenu de la carte */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
                     {service.title}
                   </h3>
                   
                   <p className="text-gray-600 text-sm leading-relaxed mb-6">
                     {service.description}
                   </p>
-                  
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    className="w-full border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+
+                  {/* Bouton Appeler */}
+                  <Button
+                    className="w-full bg-green-600 hover:bg-green-700 text-white transition-all duration-300 transform hover:scale-105"
                   >
-                    <Phone className="w-4 h-4 mr-2" />
                     Appeler
                   </Button>
                 </div>
-              )
-            })}
-          </div>
-
-          {/* Call to action */}
-          <div className="mt-16 text-center">
-            <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Besoin d'une consultation ?
-              </h3>
-              <p className="text-gray-700 mb-6">
-                Notre équipe médicale est à votre disposition pour vous accompagner dans votre parcours de santé.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                  <Phone className="w-4 h-4 mr-2" />
-                  Prendre rendez-vous
-                </Button>
-                <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
-                  Voir tous nos services
-                </Button>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -126,4 +106,3 @@ const Services = () => {
 }
 
 export default Services
-
