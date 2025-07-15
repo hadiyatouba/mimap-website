@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail } from 'lucide-react'
+import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react'
 
 const Footer = () => {
   const quickLinks = [
@@ -11,48 +11,43 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-gray-900 text-white py-12 sm:py-14 lg:py-16">
+    <footer className="bg-blue-900 text-white py-12">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          {/* Contenu principal - Mobile first responsive grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12">
-            {/* Informations principales - Mobile first */}
-            <div className="sm:col-span-2 lg:col-span-1">
-              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">MIMAP</h3>
-              <p className="text-gray-300 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
+        <div className="max-w-7xl mx-auto">
+          {/* Contenu principal */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            
+            {/* Section Logo et slogan */}
+            <div className="lg:col-span-1">
+              <div className="mb-6">
+                {/* Logo MIMAP */}
+                <img 
+                  src="/ogoMIMAP by Toutou [Récupéré]-02 1.png" 
+                  alt="MIMAP Logo" 
+                  className="h-20 w-auto mb-4"
+                />
+                {/* Texte en arabe et anglais sous le logo */}
+                <p className="text-xs text-gray-300 mb-4">
+                  موريتانيا الطب الباطني والطب الأطفال
+                  <br />
+                  MAURITANIA INTERNAL MEDICINE AND PEDIATRICS
+                </p>
+              </div>
+              
+              <p className="text-white font-medium text-lg mb-2">
                 "Votre santé, notre priorité"
               </p>
-              <div className="space-y-2 sm:space-y-3">
-                <div className="flex items-start space-x-2 sm:space-x-3">
-                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-300 text-sm sm:text-base">
-                    Ilot K EXT 929, Nouakchott, Mauritanie
-                  </span>
-                </div>
-                <div className="flex items-start space-x-2 sm:space-x-3">
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-300 text-sm sm:text-base">
-                    +222 3124 4404 / +222 4479 4404
-                  </span>
-                </div>
-                <div className="flex items-start space-x-2 sm:space-x-3">
-                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-300 text-sm sm:text-base">
-                    cabinetmimap@gmail.com
-                  </span>
-                </div>
-              </div>
             </div>
 
-            {/* Liens rapides - Mobile first responsive */}
-            <div>
-              <h4 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Liens rapides</h4>
-              <div className="grid grid-cols-2 gap-2 sm:gap-3">
+            {/* Liens rapides */}
+            <div className="lg:col-span-1">
+              <h4 className="text-xl font-bold mb-6 text-white">Liens rapides</h4>
+              <div className="space-y-3">
                 {quickLinks.map((link, index) => (
                   <a
                     key={index}
                     href={link.href}
-                    className="text-gray-300 hover:text-blue-400 transition-colors text-sm sm:text-base py-1"
+                    className="block text-white hover:text-blue-300 transition-colors duration-300 text-base"
                   >
                     {link.name}
                   </a>
@@ -60,38 +55,90 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Horaires - Mobile first responsive */}
-            <div>
-              <h4 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Horaires d'ouverture</h4>
-              <div className="space-y-2 text-gray-300 text-sm sm:text-base">
-                <div className="flex justify-between">
-                  <span>Lun–Jeu</span>
-                  <span>15h–22h</span>
+            {/* Informations de contact */}
+            <div className="lg:col-span-2">
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Coordonnées */}
+                <div>
+                  <div className="space-y-4">
+                    <div className="flex items-start space-x-3">
+                      <MapPin className="w-5 h-5 text-blue-300 flex-shrink-0 mt-1" />
+                      <div className="text-white">
+                        <p className="font-medium">Ilot K EXT 929, Nouakchott,</p>
+                        <p>Mauritanie</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-3">
+                      <Mail className="w-5 h-5 text-blue-300 flex-shrink-0 mt-1" />
+                      <p className="text-white">cabinetmimap@gmail.com</p>
+                    </div>
+                    
+                    <div className="flex items-start space-x-3">
+                      <Phone className="w-5 h-5 text-blue-300 flex-shrink-0 mt-1" />
+                      <div className="text-white">
+                        <p>+222 3124 4404 /</p>
+                        <p>+222 4479 4404</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex justify-between">
-                  <span>Vendredi</span>
-                  <span>16h–22h</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Samedi</span>
-                  <span>10h–17h</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Dimanche</span>
-                  <span className="text-red-400">Fermé</span>
+
+                {/* Réseaux sociaux */}
+                <div>
+                  <div className="flex space-x-4">
+                    <a 
+                      href="https://www.facebook.com/share/18pXwBKaiJ/?mibextid=wwXIfr" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 bg-blue-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors duration-300"
+                      aria-label="Facebook MIMAP"
+                    >
+                      <Facebook className="w-5 h-5 text-white" />
+                    </a>
+                    <a 
+                      href="https://www.instagram.com/mimap_rim?igsh=MTd5OTNreDJkdW85Zg%3D%3D&utm_source=qr" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 bg-pink-600 hover:bg-pink-500 rounded-full flex items-center justify-center transition-colors duration-300"
+                      aria-label="Instagram MIMAP"
+                    >
+                      <Instagram className="w-5 h-5 text-white" />
+                    </a>
+                    <a 
+                      href="https://www.linkedin.com/company/cabinet-mimap-mauritania-internal-medecine-and-pediatrics/?viewAsMember=true" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 bg-blue-600 hover:bg-blue-500 rounded-full flex items-center justify-center transition-colors duration-300"
+                      aria-label="LinkedIn MIMAP"
+                    >
+                      <Linkedin className="w-5 h-5 text-white" />
+                    </a>
+                    <a 
+                      href="#" 
+                      className="w-10 h-10 bg-blue-500 hover:bg-blue-400 rounded-full flex items-center justify-center transition-colors duration-300"
+                      aria-label="Twitter"
+                    >
+                      <Twitter className="w-5 h-5 text-white" />
+                    </a>
+                    <a 
+                      href="#" 
+                      className="w-10 h-10 bg-red-600 hover:bg-red-500 rounded-full flex items-center justify-center transition-colors duration-300"
+                      aria-label="YouTube"
+                    >
+                      <Youtube className="w-5 h-5 text-white" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Ligne de séparation - Responsive spacing */}
-          <div className="border-t border-gray-700 mt-8 sm:mt-10 lg:mt-12 pt-6 sm:pt-8">
-            <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-              <p className="text-gray-400 text-xs sm:text-sm text-center sm:text-left">
+          {/* Ligne de séparation et copyright */}
+          <div className="border-t border-blue-700 mt-12 pt-8">
+            <div className="text-center">
+              <p className="text-blue-200 text-sm">
                 © 2025 MIMAP - Tous droits réservés
-              </p>
-              <p className="text-gray-400 text-xs sm:text-sm text-center sm:text-right">
-                Cabinet médical certifié par l'American Heart Association
               </p>
             </div>
           </div>
@@ -102,4 +149,3 @@ const Footer = () => {
 }
 
 export default Footer
-

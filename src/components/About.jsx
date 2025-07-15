@@ -6,15 +6,18 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
             {/* Contenu texte - Mobile first */}
             <div className="space-y-4 sm:space-y-6 order-2 lg:order-1">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-900 mb-4 sm:mb-6 lg:mb-8">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600 mb-4 sm:mb-6 lg:mb-8">
                 Qui sommes-nous ?
               </h2>
               
-              <div className="space-y-3 sm:space-y-4">
-                <p className="text-base sm:text-lg font-semibold text-gray-900 mb-4 sm:mb-6">
-                  Cabinet MIMAP, votre partenaire pour la santé
-                  <br className="hidden sm:block" />
-                  <span className="sm:hidden"> </span>et le bien-être de toute la famille.
+              <div className="space-y-4 sm:space-y-6">
+                <p className="text-base sm:text-lg font-semibold text-blue-600 mb-4 sm:mb-6">
+                  Cabinet MIMAP : <span className="text-gray-900">Votre partenaire pour la santé et le bien-être de toute la famille et la santé en milieu professionnel</span>
+                </p>
+                
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                  MIMAP est un groupe de médecins généralistes et spécialistes dédiés à la médecine préventive, 
+                  la santé au travail et la formation certifiée en premiers secours et RCR/CPR.
                 </p>
                 
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
@@ -25,10 +28,24 @@ const About = () => {
                 </p>
                 
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                  Notre équipe, certifiée par l'American Heart Association, collabore avec des institutions 
-                  comme la Banque mondiale, Tasiast ou Aura Energy, pour construire un monde plus sain et 
-                  sécurisé.
+                  Notre équipe d'experts, certifiée par des organismes internationaux tels que l'American Heart Association, 
+                  s'engage à offrir des services de qualité supérieure afin de répondre aux défis uniques de la santé 
+                  familiale et professionnelle. Nous croyons fermement que le bien-être individuel et collectif est la 
+                  clé d'un avenir plus harmonieux et sûr. 🎯
                 </p>
+
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                  Nous avons eu le privilège de collaborer avec des institutions prestigieuses comme la Banque mondiale 
+                  et des compagnies majeures telles que Tasiast et Aura Energy. Ces partenariats renforcent notre mission : 
+                  transformer les environnements familiaux et professionnels en espaces où la sécurité et la santé sont 
+                  des priorités absolues.
+                </p>
+
+                <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg p-4 sm:p-6 border-l-4 border-blue-600">
+                  <p className="text-sm sm:text-base font-medium text-gray-800">
+                    💡 <span className="font-bold text-blue-600">Notre objectif :</span> Accompagner chaque membre de votre famille et votre organisation à se sentir protégé, épanoui et prêt à relever tous les défis. Ensemble, faisons de la santé et du bien-être un mode de vie.
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -40,30 +57,31 @@ const About = () => {
               {/* Image principale de l'équipe */}
               <div className="relative z-10 mb-4 sm:mb-6">
                 <div className="bg-white p-2 sm:p-3 lg:p-4 rounded-lg shadow-lg">
-                  <img 
-                    src="/Rectangle 1.png" 
-                    alt="Équipe MIMAP" 
+                  <img
+                    src="/Rectangle 1.png"
+                    alt="Cabinet MIMAP - Équipe et installations"
                     className="w-full h-48 sm:h-64 lg:h-80 object-cover rounded-lg"
                   />
+                  <div className="absolute top-6 left-6 bg-white px-4 py-2 rounded-lg shadow-md">
+                    <span className="text-blue-600 font-bold text-lg tracking-wider">M I M A P</span>
+                  </div>
                 </div>
               </div>
 
-              {/* Images secondaires - Responsive grid */}
-              <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4 relative z-10">
-                {/* Image de présentation */}
-                <div className="bg-white p-2 sm:p-3 rounded-lg shadow-lg">
+              {/* Images secondaires - Galerie d'établissement */}
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 relative z-10">
+                <div className="bg-white p-2 rounded-lg shadow-lg">
                   <img 
-                    src="/Rectangle 2.png" 
-                    alt="Présentation MIMAP" 
+                    src="/image box.png" 
+                    alt="Façade Cabinet MIMAP" 
                     className="w-full h-20 sm:h-24 lg:h-32 object-cover rounded-lg"
                   />
                 </div>
                 
-                {/* Image d'équipe secondaire */}
-                <div className="bg-white p-2 sm:p-3 rounded-lg shadow-lg">
+                <div className="bg-white p-2 rounded-lg shadow-lg">
                   <img 
-                    src="/Section Hero.png" 
-                    alt="Équipe médicale" 
+                    src="/Box 3.png" 
+                    alt="Accueil MIMAP" 
                     className="w-full h-20 sm:h-24 lg:h-32 object-cover rounded-lg"
                   />
                 </div>
