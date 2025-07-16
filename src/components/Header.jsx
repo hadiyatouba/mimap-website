@@ -12,6 +12,30 @@ const Header = () => {
 
   const handleLinkClick = (href) => {
     setActiveLink(href)
+    // Smooth scroll vers la section
+    const element = document.querySelector(href)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+    // Fermer le menu mobile
+    setIsMenuOpen(false)
+  }
+
+  const handleWhatsApp = () => {
+    window.open('https://wa.me/22231244404', '_blank')
+  }
+
+  const handleCall = () => {
+    window.location.href = 'tel:+22231244404'
+  }
+
+  const handleCallNowClick = () => {
+    const element = document.querySelector('#contact')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+    // Fermer le menu mobile si ouvert
+    setIsMenuOpen(false)
   }
 
   return (
@@ -27,7 +51,12 @@ const Header = () => {
               </div>
               <div className="flex items-center space-x-1">
                 <Mail className="w-3 h-3 lg:w-4 lg:h-4" />
-                <span className="text-xs lg:text-sm">cabinetmimap@gmail.com</span>
+                <a
+                  href="mailto:cabinetmimap@gmail.com"
+                  className="text-xs lg:text-sm hover:text-blue-200 transition-colors underline"
+                >
+                  cabinetmimap@gmail.com
+                </a>
               </div>
             </div>
             <div className="flex flex-col xl:flex-row xl:items-center xl:space-x-8 space-y-2 xl:space-y-0">
@@ -47,7 +76,12 @@ const Header = () => {
               </div>
               <div className="flex items-center space-x-1">
                 <MessageCircle className="w-3 h-3 lg:w-4 lg:h-4" />
-                <span className="underline text-xs lg:text-sm">Connect on Whatsapp</span>
+                <button
+                  onClick={handleWhatsApp}
+                  className="underline text-xs lg:text-sm hover:text-blue-200 transition-colors"
+                >
+                  Connect on Whatsapp
+                </button>
               </div>
             </div>
           </div>
@@ -109,12 +143,12 @@ const Header = () => {
               Blog
             </a>
             <a
-              href="#galerie"
-              onClick={() => handleLinkClick('#galerie')}
-              className={`text-gray-700 hover:text-blue-600 transition-colors font-medium pb-2 border-b-2 text-sm xl:text-base ${activeLink === '#galerie' ? 'border-blue-600 text-blue-600' : 'border-transparent'
+              href="#gallery"
+              onClick={() => handleLinkClick('#gallery')}
+              className={`text-gray-700 hover:text-blue-600 transition-colors font-medium pb-2 border-b-2 text-sm xl:text-base ${activeLink === '#gallery' ? 'border-blue-600 text-blue-600' : 'border-transparent'
                 }`}
             >
-              Galerie
+              Gallery
             </a>
             <a
               href="#contact"
@@ -128,7 +162,10 @@ const Header = () => {
 
           {/* Call to action button - Hidden on mobile, visible on desktop */}
           <div className="hidden lg:block">
-            <Button className="bg-green-600 hover:bg-green-700 text-white rounded-full px-4 xl:px-6 py-2 text-sm xl:text-base">
+            <Button 
+              className="bg-green-600 hover:bg-green-700 text-white rounded-full px-4 xl:px-6 py-2 text-sm xl:text-base"
+              onClick={handleCallNowClick}
+            >
               Appeler maintenant
             </Button>
           </div>
@@ -147,56 +184,56 @@ const Header = () => {
         {isMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 border-t border-gray-200">
             <div className="flex flex-col space-y-4 pt-4">
-              <a 
-                href="#accueil" 
+              <a
+                href="#accueil"
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 px-2 rounded-lg hover:bg-gray-50"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Accueil
               </a>
-              <a 
-                href="#apropos" 
+              <a
+                href="#apropos"
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 px-2 rounded-lg hover:bg-gray-50"
                 onClick={() => setIsMenuOpen(false)}
               >
                 À propos
               </a>
-              <a 
-                href="#services" 
+              <a
+                href="#services"
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 px-2 rounded-lg hover:bg-gray-50"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
               </a>
-              <a 
-                href="#equipe" 
+              <a
+                href="#equipe"
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 px-2 rounded-lg hover:bg-gray-50"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Équipe
               </a>
-              <a 
-                href="#blog" 
+              <a
+                href="#blog"
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 px-2 rounded-lg hover:bg-gray-50"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Blog
               </a>
-              <a 
-                href="#galerie" 
+              <a
+                href="#gallery"
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 px-2 rounded-lg hover:bg-gray-50"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Galerie
+                Gallery
               </a>
-              <a 
-                href="#contact" 
+              <a
+                href="#contact"
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 px-2 rounded-lg hover:bg-gray-50"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
               </a>
-              
+
               {/* Mobile contact info */}
               <div className="pt-4 border-t border-gray-200 space-y-3">
                 <div className="flex items-center space-x-2 text-sm text-gray-600">
@@ -208,10 +245,10 @@ const Header = () => {
                   <span>cabinetmimap@gmail.com</span>
                 </div>
               </div>
-              
-              <Button 
+
+              <Button
                 className="bg-green-600 hover:bg-green-700 text-white w-full rounded-full py-3 mt-4"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={handleCallNowClick}
               >
                 Appeler maintenant
               </Button>

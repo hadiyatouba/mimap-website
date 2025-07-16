@@ -14,14 +14,14 @@ const Blog = () => {
       date: "24 avril 2025"
     },
     {
-      image: "/ogoMIMAP by Toutou [Récupéré]_Plan de travail 1 1 (1).png",
+      image: "/Box 1.png",
       category: "Formation",
       title: "Formation en Premiers Secours",
       description: "Nouvelle session de formation certifiée AHA pour les entreprises et particuliers.",
       date: "15 mai 2025"
     },
     {
-      image: "/Rectangle 1.png",
+      image: "/Background image box (2).png",
       category: "Médecine du travail",
       title: "Programme Check-up Entreprise",
       description: "Lancement de notre nouveau programme de bilan de santé pour les employés.",
@@ -72,8 +72,8 @@ const Blog = () => {
                 {/* Bordure verte décorative */}
                 <div className="absolute -top-4 -left-4 w-full h-full bg-green-500 rounded-lg z-0"></div>
                 <div className="relative z-10 bg-white p-4 rounded-lg shadow-lg">
-                  <img 
-                    src={articles[currentSlide].image} 
+                  <img
+                    src={articles[currentSlide].image}
                     alt={articles[currentSlide].title}
                     className="w-full h-64 object-cover rounded-lg"
                   />
@@ -104,13 +104,13 @@ const Blog = () => {
                   <p className="text-gray-600 font-semibold">
                     {articles[currentSlide].date}
                   </p>
-                  
-                  <Button 
+
+                  <Button
                     onClick={() => window.open('https://www.facebook.com/share/18pXwBKaiJ/?mibextid=wwXIfr', '_blank')}
                     className="bg-green-600 hover:bg-green-700 text-white px-4 sm:px-6 py-2 rounded-lg text-sm sm:text-base w-full sm:w-auto transition-all duration-300 hover:scale-105"
                   >
                     <svg className="w-4 h-4 mr-2 inline" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                     </svg>
                     Voir sur Facebook
                   </Button>
@@ -124,11 +124,10 @@ const Blog = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentSlide 
-                      ? 'bg-blue-600 scale-125' 
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
+                      ? 'bg-blue-600 scale-125'
                       : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
+                    }`}
                 />
               ))}
             </div>

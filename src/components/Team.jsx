@@ -37,14 +37,14 @@ const Team = () => {
     {
       name: "Dr. Faty Gata Ba",
       specialty: "Cardiologue",
-      image: "/ogoMIMAP by Toutou [Récupéré]_Plan de travail 1 1 (1).png",
+      image: "/Background image box (1).png",
       diplomas: "Diplôme de spécialité en cardiologie",
       schedule: "Lun-Ven: 8h-17h, Sur RDV"
     },
     {
       name: "Dr. Cheikh Diouf",
       specialty: "Généraliste et Médecine du sport",
-      image: "/Rectangle 1.png",
+      image: "/Background image box.png",
       diplomas: "Diplôme d'état de médecine générale, Spécialisation en médecine du sport",
       schedule: "Lun-Ven: 8h-17h, Sur RDV entreprises"
     },
@@ -107,7 +107,7 @@ const Team = () => {
 
   return (
     <section id="equipe" className="py-12 sm:py-16 lg:py-20 bg-gray-50 relative overflow-hidden">
-     
+
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -124,20 +124,20 @@ const Team = () => {
           <div className="relative">
             {/* Conteneur du carrousel */}
             <div className="overflow-hidden">
-              <div 
+              <div
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${translatePercentage}%)` }}
               >
                 {teamMembers.map((member, index) => (
-                  <div 
+                  <div
                     key={index}
                     className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 flex-shrink-0 px-2 sm:px-3 lg:px-4"
                   >
                     <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group">
                       {/* Photo du médecin */}
                       <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
-                        <img 
-                          src={member.image} 
+                        <img
+                          src={member.image}
                           alt={member.name}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
@@ -154,15 +154,24 @@ const Team = () => {
 
                         {/* Réseaux sociaux */}
                         <div className="flex justify-center space-x-2 sm:space-x-3">
-                          <button className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors duration-300">
-                            <Facebook className="w-3 h-3 sm:w-4 sm:h-4" />
-                          </button>
-                          <button className="w-7 h-7 sm:w-8 sm:h-8 bg-pink-500 text-white rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors duration-300">
-                            <Instagram className="w-3 h-3 sm:w-4 sm:h-4" />
-                          </button>
-                          <button className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-400 text-white rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors duration-300">
-                            <Twitter className="w-3 h-3 sm:w-4 sm:h-4" />
-                          </button>
+                          <a
+                            href="https://www.facebook.com/share/18pXwBKaiJ/?mibextid=wwXIfr"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-10 h-10 bg-blue-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors duration-300"
+                            aria-label="Facebook MIMAP"
+                          >
+                            <Facebook className="w-5 h-5 text-white" />
+                          </a>
+                          <a
+                            href="https://www.instagram.com/mimap_rim?igsh=MTd5OTNreDJkdW85Zg%3D%3D&utm_source=qr"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-10 h-10 bg-pink-600 hover:bg-pink-500 rounded-full flex items-center justify-center transition-colors duration-300"
+                            aria-label="Instagram MIMAP"
+                          >
+                            <Instagram className="w-5 h-5 text-white" />
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -198,11 +207,10 @@ const Team = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-                    currentSlide === index 
-                      ? 'bg-green-500 scale-125' 
+                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${currentSlide === index
+                      ? 'bg-green-500 scale-125'
                       : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
+                    }`}
                 />
               ))}
             </div>
@@ -213,4 +221,4 @@ const Team = () => {
   )
 }
 
-export default Team
+export default Team 

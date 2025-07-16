@@ -2,13 +2,26 @@ import { Button } from '@/components/ui/button'
 import { Calendar, Phone } from 'lucide-react'
 
 const Hero = () => {
+  const handleDiscoverClick = () => {
+    const element = document.querySelector('#apropos')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
+  const handleCallClick = () => {
+    const element = document.querySelector('#contact')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <section id="accueil" className="relative min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] bg-gray-50 overflow-hidden">
       {/* Formes géométriques vertes */}
       <div className="absolute inset-0">
         {/* Grande forme verte à gauche */}
         <div className="absolute -left-20 top-0 w-80 h-full bg-green-400 transform -skew-x-12 opacity-90"></div>
-
         {/* Forme verte à droite */}
         <div className="absolute -right-32 top-20 w-96 h-96 bg-green-300 rounded-full opacity-70"></div>
         <div className="absolute -right-20 bottom-0 w-64 h-64 bg-green-400 transform rotate-45 opacity-80"></div>
@@ -35,26 +48,28 @@ const Hero = () => {
             <br />
             <span className="text-blue-900">notre priorité</span>
           </h1>
-
+          
           <p className="text-base sm:text-lg lg:text-xl text-black mb-6 sm:mb-8 leading-relaxed max-w-full sm:max-w-lg lg:max-w-xl">
             MIMAP vous accompagne dans la médecine préventive,
             la santé familiale, la santé au travail et les formations en
             premiers secours.
           </p>
-
+          
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <Button
               size="lg"
               className="bg-green-600 hover:bg-green-700 text-white px-6 sm:px-8 py-3 text-base sm:text-lg rounded-lg shadow-lg w-full sm:w-auto"
+              onClick={handleCallClick}
             >
               <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-              Prendre RDV
+              Appeler pour prendre RDV
             </Button>
-
+            
             <Button
               variant="outline"
               size="lg"
               className="border-2 border-blue-600 text-blue-600 hover:bg-blue-900 hover:text-white px-6 sm:px-8 py-3 text-base sm:text-lg rounded-lg w-full sm:w-auto"
+              onClick={handleDiscoverClick}
             >
               Découvrir MIMAP
             </Button>

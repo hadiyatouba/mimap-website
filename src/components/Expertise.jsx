@@ -79,7 +79,7 @@ const Expertise = () => {
                     if (index !== currentSlide) return null;
                     const IconComponent = expertise.icon
                     return (
-                      <div 
+                      <div
                         key={index}
                         className="w-full"
                       >
@@ -88,15 +88,15 @@ const Expertise = () => {
                           <div className={`${expertise.color} rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-12`}>
                             <IconComponent className={`w-8 h-8 ${expertise.iconColor} transition-all duration-300 group-hover:scale-125`} />
                           </div>
-                          
+
                           {/* Titre */}
                           <h3 className="text-xl font-bold mb-3 transition-all duration-300 group-hover:text-blue-600">
                             {expertise.title}
                           </h3>
-                          
+
                           {/* Ligne décorative */}
                           <div className="w-12 h-1 bg-green-500 mx-auto mb-3 transition-all duration-500 group-hover:w-20 group-hover:bg-blue-500"></div>
-                          
+
                           {/* Description */}
                           <p className="text-sm leading-relaxed transition-all duration-300 group-hover:text-gray-600">
                             {expertise.description}
@@ -110,14 +110,14 @@ const Expertise = () => {
 
               {/* Tablet and Desktop: Horizontal carousel */}
               <div className="hidden sm:block">
-                <div 
+                <div
                   className="flex transition-transform duration-500 ease-in-out"
                   style={{ transform: `translateX(-${currentSlide * (100 / 3)}%)` }}
                 >
                   {expertises.map((expertise, index) => {
                     const IconComponent = expertise.icon
                     return (
-                      <div 
+                      <div
                         key={index}
                         className="w-1/3 flex-shrink-0 px-2 sm:px-4"
                       >
@@ -126,15 +126,15 @@ const Expertise = () => {
                           <div className={`${expertise.color} rounded-full p-3 sm:p-4 lg:p-6 w-12 sm:w-16 lg:w-20 h-12 sm:h-16 lg:h-20 mx-auto mb-3 sm:mb-4 lg:mb-6 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-12`}>
                             <IconComponent className={`w-6 sm:w-8 lg:w-10 h-6 sm:h-8 lg:h-10 ${expertise.iconColor} transition-all duration-300 group-hover:scale-125`} />
                           </div>
-                          
+
                           {/* Titre */}
                           <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 lg:mb-4 transition-all duration-300 group-hover:text-blue-600">
                             {expertise.title}
                           </h3>
-                          
+
                           {/* Ligne décorative */}
                           <div className="w-12 sm:w-14 lg:w-16 h-1 bg-green-500 mx-auto mb-2 sm:mb-3 lg:mb-4 transition-all duration-500 group-hover:w-16 sm:group-hover:w-20 lg:group-hover:w-24 group-hover:bg-blue-500"></div>
-                          
+
                           {/* Description */}
                           <p className="text-xs sm:text-sm lg:text-base leading-relaxed transition-all duration-300 group-hover:text-gray-600">
                             {expertise.description}
@@ -169,11 +169,10 @@ const Expertise = () => {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-500 hover:scale-125 active:scale-90 ${
-                  index === currentSlide 
-                    ? 'bg-blue-600 scale-125 shadow-lg' 
+                className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-500 hover:scale-125 active:scale-90 ${index === currentSlide
+                    ? 'bg-blue-600 scale-125 shadow-lg'
                     : 'bg-gray-300 hover:bg-gray-400 hover:shadow-md'
-                }`}
+                  }`}
               />
             ))}
           </div>

@@ -9,21 +9,21 @@ const Testimonials = () => {
       text: "« Nous voulons venir en aide aux personnes en situation difficile… les personnes atteintes du diabète et de l'hypertension seront suivies par les spécialistes. »",
       author: "Dr Khadija Faye",
       role: "Directrice MIMAP",
-      image: "/fixed-height sec- (1).png",
+      image: "/Rectangle 2.png",
       source: "Interview Kassataya"
     },
     {
       text: "« MIMAP représente un modèle d'innovation dans le domaine de la santé préventive en Mauritanie, avec une approche centrée sur le patient. »",
       author: "Partenaire institutionnel",
       role: "Banque Mondiale",
-      image: "/user-cover-4.png",
+      image: "/fixed-height sec-.png",
       source: "Rapport d'évaluation"
     },
     {
       text: "« L'équipe MIMAP nous a accompagnés dans la mise en place d'un programme de santé au travail exemplaire pour nos employés. »",
       author: "Responsable RH",
       role: "Tasiast Mining",
-      image: "/Rectangle 1.png",
+      image: "/Image docteur.png",
       source: "Témoignage client"
     }
   ]
@@ -98,12 +98,12 @@ const Testimonials = () => {
                       </span>
                     </div>
                   </div>
-                  
+
                   <div className="text-center">
                     <p className="font-bold text-gray-900 text-lg">
                       {testimonials[currentTestimonial].author}
                     </p>
-                    <p className="text-blue-600 text-sm mb-2">
+                    <p className="text-sm mb-2">
                       {testimonials[currentTestimonial].role}
                     </p>
                     <p className="text-gray-500 text-xs">
@@ -120,11 +120,10 @@ const Testimonials = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentTestimonial 
-                      ? 'bg-blue-600 scale-125' 
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentTestimonial
+                      ? 'bg-blue-600 scale-125'
                       : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
+                    }`}
                 />
               ))}
             </div>

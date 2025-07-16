@@ -8,42 +8,42 @@ const Gallery = () => {
   const galleryImages = [
     {
       id: 1,
-      src: "/fixed-height sec-.png",
+      src: "/Box 1.png",
       alt: "Équipe MIMAP en réunion",
       category: "Équipe",
       description: "Réunion d'équipe pour planifier les activités de santé préventive"
     },
     {
       id: 2,
-      src: "/fixed-height sec-.png",
+      src: "/Rectangle 1.png",
       alt: "Consultation médicale",
       category: "Soins",
       description: "Consultation avec nos spécialistes en diabète et hypertension"
     },
     {
       id: 3,
-      src: "/fixed-height sec-.png",
+      src: "/Box 3.png",
       alt: "Infrastructure moderne",
       category: "Infrastructure",
       description: "Nos installations modernes pour un accueil optimal"
     },
     {
       id: 4,
-      src: "/fixed-height sec-.png",
+      src: "/Background image box.png",
       alt: "Formation du personnel",
       category: "Formation",
       description: "Formation continue de notre équipe médicale"
     },
     {
       id: 5,
-      src: "/fixed-height sec-.png",
+      src: "/Box 5.png",
       alt: "Équipement médical",
       category: "Équipement",
       description: "Équipements de pointe pour diagnostics précis"
     },
     {
       id: 6,
-      src: "/fixed-height sec-.png",
+      src: "/Box 4 (1).png",
       alt: "Accueil patients",
       category: "Accueil",
       description: "Espace d'accueil chaleureux pour nos patients"
@@ -72,7 +72,7 @@ const Gallery = () => {
   }
 
   const getCategoryIcon = (category) => {
-    switch(category) {
+    switch (category) {
       case 'Équipe': return <Users className="w-4 h-4" />
       case 'Soins': return <Heart className="w-4 h-4" />
       case 'Infrastructure': return <Building className="w-4 h-4" />
@@ -84,7 +84,7 @@ const Gallery = () => {
   }
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-blue-50 to-green-50">
+    <section id="gallery" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-blue-50 to-green-50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* En-tête */}
@@ -113,7 +113,7 @@ const Gallery = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
-                
+
                 {/* Overlay avec animation */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -139,9 +139,9 @@ const Gallery = () => {
 
           {/* Bouton Facebook */}
           <div className="text-center">
-            <a 
-              href="https://www.facebook.com/watch/?v=1690970188052652" 
-              target="_blank" 
+            <a
+              href="https://www.facebook.com/watch/?v=1690970188052652"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
@@ -187,7 +187,7 @@ const Gallery = () => {
                   alt={selectedImage.alt}
                   className="w-full h-auto max-h-[70vh] object-contain"
                 />
-                
+
                 {/* Informations de l'image */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
                   <div className="flex items-center gap-2 mb-2">
@@ -212,11 +212,10 @@ const Gallery = () => {
                     setCurrentIndex(index)
                     setSelectedImage(galleryImages[index])
                   }}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex 
-                      ? 'bg-white scale-125' 
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
+                      ? 'bg-white scale-125'
                       : 'bg-white/50 hover:bg-white/75'
-                  }`}
+                    }`}
                 />
               ))}
             </div>

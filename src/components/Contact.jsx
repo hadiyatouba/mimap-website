@@ -2,10 +2,7 @@ import { MapPin, Clock, Phone, Mail, MessageCircle, Calendar } from 'lucide-reac
 import { Button } from '@/components/ui/button'
 
 const Contact = () => {
-  const handlePhoneCall = (number) => {
-    window.location.href = `tel:${number}`
-  }
-
+  
   const handleWhatsApp = () => {
     window.open('https://wa.me/22231244404', '_blank')
   }
@@ -39,16 +36,8 @@ const Contact = () => {
               <p className="text-base sm:text-lg mb-6 opacity-90">
                 Appelez-nous directement pour prendre rendez-vous avec nos spécialistes
               </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button
-                  onClick={() => handlePhoneCall('+22231244404')}
-                  className="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 text-base sm:text-lg font-semibold rounded-lg transition-all duration-300 hover:scale-105"
-                >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Appeler maintenant
-                </Button>
-                
+
+              <div className="flex justify-center items-center">
                 <Button
                   onClick={handleWhatsApp}
                   className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 text-base sm:text-lg font-semibold rounded-lg transition-all duration-300 hover:scale-105"
@@ -148,7 +137,7 @@ const Contact = () => {
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">
                 Plan d'accès
               </h3>
-              
+
               {/* Placeholder pour Google Maps - À remplacer par la vraie carte */}
               <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl h-64 sm:h-80 lg:h-96 flex items-center justify-center relative overflow-hidden">
                 {/* Google Maps sera intégré ici */}
@@ -164,7 +153,7 @@ const Contact = () => {
                   <p className="text-blue-600 font-semibold text-sm sm:text-base mb-4">
                     "Votre santé, notre priorité"
                   </p>
-                  
+
                   {/* Bouton pour ouvrir Google Maps */}
                   <Button
                     onClick={() => window.open('https://maps.google.com/maps?q=Ilot+K+EXT+929+Nouakchott+Mauritanie', '_blank')}

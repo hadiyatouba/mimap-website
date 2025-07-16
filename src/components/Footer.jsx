@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react'
+import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from 'lucide-react'
 
 const Footer = () => {
   const quickLinks = [
@@ -16,14 +16,14 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto">
           {/* Contenu principal */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            
+
             {/* Section Logo et slogan */}
             <div className="lg:col-span-1">
               <div className="mb-6">
                 {/* Logo MIMAP */}
-                <img 
-                  src="/ogoMIMAP by Toutou [Récupéré]-02 1.png" 
-                  alt="MIMAP Logo" 
+                <img
+                  src="/ogoMIMAP by Toutou [Récupéré]-02 1.png"
+                  alt="MIMAP Logo"
                   className="h-20 w-auto mb-4"
                 />
                 {/* Texte en arabe et anglais sous le logo */}
@@ -33,7 +33,7 @@ const Footer = () => {
                   MAURITANIA INTERNAL MEDICINE AND PEDIATRICS
                 </p>
               </div>
-              
+
               <p className="text-white font-medium text-lg mb-2">
                 "Votre santé, notre priorité"
               </p>
@@ -64,16 +64,28 @@ const Footer = () => {
                     <div className="flex items-start space-x-3">
                       <MapPin className="w-5 h-5 text-blue-300 flex-shrink-0 mt-1" />
                       <div className="text-white">
-                        <p className="font-medium">Ilot K EXT 929, Nouakchott,</p>
-                        <p>Mauritanie</p>
+                        <a
+                          href="https://maps.google.com/maps?q=Ilot+K+EXT+929,+Nouakchott,+Mauritanie"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-blue-300 transition-colors duration-300 underline"
+                        >
+                          <p className="font-medium">Ilot K EXT 929, Nouakchott,</p>
+                          <p>Mauritanie</p>
+                        </a>
                       </div>
                     </div>
-                    
-                    <div className="flex items-start space-x-3">
-                      <Mail className="w-5 h-5 text-blue-300 flex-shrink-0 mt-1" />
-                      <p className="text-white">cabinetmimap@gmail.com</p>
+
+                    <div className="flex items-center space-x-1">
+                      <Mail className="w-3 h-3 lg:w-4 lg:h-4" />
+                      <a
+                        href="mailto:cabinetmimap@gmail.com"
+                        className="text-xs lg:text-sm hover:text-blue-200 transition-colors underline"
+                      >
+                        cabinetmimap@gmail.com
+                      </a>
                     </div>
-                    
+
                     <div className="flex items-start space-x-3">
                       <Phone className="w-5 h-5 text-blue-300 flex-shrink-0 mt-1" />
                       <div className="text-white">
@@ -87,8 +99,8 @@ const Footer = () => {
                 {/* Réseaux sociaux */}
                 <div>
                   <div className="flex space-x-4">
-                    <a 
-                      href="https://www.facebook.com/share/18pXwBKaiJ/?mibextid=wwXIfr" 
+                    <a
+                      href="https://www.facebook.com/share/18pXwBKaiJ/?mibextid=wwXIfr"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-10 h-10 bg-blue-700 hover:bg-blue-600 rounded-full flex items-center justify-center transition-colors duration-300"
@@ -96,8 +108,8 @@ const Footer = () => {
                     >
                       <Facebook className="w-5 h-5 text-white" />
                     </a>
-                    <a 
-                      href="https://www.instagram.com/mimap_rim?igsh=MTd5OTNreDJkdW85Zg%3D%3D&utm_source=qr" 
+                    <a
+                      href="https://www.instagram.com/mimap_rim?igsh=MTd5OTNreDJkdW85Zg%3D%3D&utm_source=qr"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-10 h-10 bg-pink-600 hover:bg-pink-500 rounded-full flex items-center justify-center transition-colors duration-300"
@@ -105,8 +117,8 @@ const Footer = () => {
                     >
                       <Instagram className="w-5 h-5 text-white" />
                     </a>
-                    <a 
-                      href="https://www.linkedin.com/company/cabinet-mimap-mauritania-internal-medecine-and-pediatrics/?viewAsMember=true" 
+                    <a
+                      href="https://www.linkedin.com/company/cabinet-mimap-mauritania-internal-medecine-and-pediatrics/?viewAsMember=true"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-10 h-10 bg-blue-600 hover:bg-blue-500 rounded-full flex items-center justify-center transition-colors duration-300"
@@ -114,7 +126,7 @@ const Footer = () => {
                     >
                       <Linkedin className="w-5 h-5 text-white" />
                     </a>
-                    <a 
+                    {/* <a 
                       href="#" 
                       className="w-10 h-10 bg-blue-500 hover:bg-blue-400 rounded-full flex items-center justify-center transition-colors duration-300"
                       aria-label="Twitter"
@@ -127,7 +139,7 @@ const Footer = () => {
                       aria-label="YouTube"
                     >
                       <Youtube className="w-5 h-5 text-white" />
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </div>
