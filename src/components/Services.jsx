@@ -1,7 +1,10 @@
 import { Button } from '@/components/ui/button'
 import { Heart, Clock, User, Stethoscope } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const Services = () => {
+  const { t } = useTranslation()
+  
   const handleCallClick = () => {
     const element = document.querySelector('#contact')
     if (element) {
@@ -11,150 +14,150 @@ const Services = () => {
 
   const services = [
     {
-      image: "/Background image box (1).png",
-      title: "Médecine générale",
-      description: "Consultations pour tous les âges, suivi global de la santé",
-      equipments: "Tensiomètre, stéthoscope, otoscope, balance",
-      hours: "Lun-Jeu: 15h-22h, Sam: 10h-17h",
-      doctor: "Dr. Fatimetou Kane",
-      price: "Consultation: 2500 MRU"
+      title: t('general_medicine'),
+      description: t('general_medicine_desc'),
+      image: "/Rectangle 3.png",
+      equipment: t('tensiometer_stethoscope'),
+      schedule: t('mon_thu_15_23') + ', ' + t('sat_10_17'),
+      doctor: t('dr_fatimetou_kane'),
+      price: t('consultation_2500'),
+      type: t('consultation')
     },
     {
-      image: "/image box (1).png",
-      title: "Médecine de famille",
-      description: "Approche holistique centrée sur le bien-être familial",
-      equipments: "Équipement pédiatrique, matériel de consultation",
-      hours: "Lun-Jeu: 15h-22h, Sam: 10h-17h",
-      doctor: "Dr. Kader Kane",
-      price: "Consultation famille: 3000 MRU"
+      title: t('family_medicine'),
+      description: t('family_medicine_desc'),
+      image: "/Rectangle 4.png",
+      equipment: t('pediatric_equipment'),
+      schedule: t('mon_thu_15_23') + ', ' + t('sat_10_17'),
+      doctor: t('dr_kader_kane'),
+      price: t('family_consultation_3000'),
+      type: t('consultation')
     },
     {
-      image: "/Background image box (3).png",
-      title: "Pédiatrie",
-      description: "Soins spécialisés pour nourrissons, enfants et adolescents",
-      equipments: "Balance pédiatrique, toise, thermomètre infrarouge",
-      hours: "Lun-Jeu: 16h-21h, Sam: 10h-16h",
-      doctor: "Dr. Aicha Sow",
-      price: "Consultation enfant: 2000 MRU"
+      title: t('pediatrics'),
+      description: t('pediatrics_desc'),
+      image: "/Rectangle 5.png",
+      equipment: t('pediatric_balance'),
+      schedule: t('mon_thu_16_21') + ', ' + t('sat_10_16'),
+      doctor: t('dr_aicha_sow'),
+      price: t('child_consultation_2000'),
+      type: t('consultation')
     },
     {
-      image: "/Background image box (4).png",
-      title: "Kinésithérapie respiratoire",
-      description: "Rééducation des troubles respiratoires chez l'enfant et l'adulte",
-      equipments: "Spiromètre, appareils de drainage, inhalateurs",
-      hours: "Lun-Ven: 8h-18h, Sur RDV",
-      doctor: "Dr. Mariem Ba",
-      price: "Séance: 1500 MRU"
+      title: t('respiratory_physiotherapy'),
+      description: t('respiratory_physiotherapy_desc'),
+      image: "/Rectangle 6.png",
+      equipment: t('spirometer_drainage'),
+      schedule: t('mon_fri_8_18') + ', ' + t('by_appointment'),
+      doctor: t('dr_mariem_ba'),
+      price: t('session_1500'),
+      type: t('session')
     },
     {
-      image: "/Background image box.png",
-      title: "Psychiatrie",
-      description: "Suivi psychologique, troubles mentaux, thérapies adaptées",
-      equipments: "Bureau de consultation, tests psychologiques",
-      hours: "Mar-Jeu: 14h-20h, Sur RDV",
-      doctor: "Dr. Mohamed Kane",
-      price: "Consultation: 4000 MRU"
+      title: t('psychiatry'),
+      description: t('psychiatry_desc'),
+      image: "/Rectangle 7.png",
+      equipment: t('consultation_office'),
+      schedule: t('tue_thu_14_20') + ', ' + t('by_appointment'),
+      doctor: t('dr_mohamed_kane'),
+      price: t('consultation_4000'),
+      type: t('consultation')
     },
     {
-      image: "/Background image box (2).png",
-      title: "Urologie",
-      description: "Soins du système urinaire et santé masculine",
-      equipments: "Échographe, matériel d'examen urologique",
-      hours: "Lun-Mer: 15h-19h, Sur RDV",
-      doctor: "Dr. Oumar Diallo",
-      price: "Consultation: 3500 MRU"
+      title: t('urology'),
+      description: t('urology_desc'),
+      image: "/Rectangle 8.png",
+      equipment: t('ultrasound_urological'),
+      schedule: t('mon_wed_15_19') + ', ' + t('by_appointment'),
+      doctor: t('dr_oumar_diallo'),
+      price: t('consultation_3500'),
+      type: t('consultation')
     },
     {
-      image: "/Background image box (5).png",
-      title: "Infectiologie",
-      description: "Prévention, diagnostic et traitement des maladies infectieuses",
-      equipments: "Tests rapides, microscope, matériel de prélèvement",
-      hours: "Lun-Jeu: 15h-22h, Urgences 24h/7j",
-      doctor: "Dr. Hachim Kebe",
-      price: "Consultation: 3000 MRU"
+      title: t('infectiology'),
+      description: t('infectiology_desc'),
+      image: "/Rectangle 9.png",
+      equipment: t('rapid_tests'),
+      schedule: t('mon_thu_15_22') + ', ' + t('emergency_24_7'),
+      doctor: t('dr_hachim_kebe'),
+      price: t('consultation_3000'),
+      type: t('consultation')
     },
     {
-      image: "/image box (2).png",
-      title: "Médecine du travail",
-      description: "Suivi médical des employés, bilan pré-embauche, prévention et sécurité en milieu professionnel",
-      equipments: "Audiomètre, spiromètre, matériel de bilan complet",
-      hours: "Lun-Ven: 8h-17h, Sur RDV entreprises",
-      doctor: "Dr. Ahmed Fall",
-      price: "Bilan: 5000 MRU"
+      title: t('occupational_medicine'),
+      description: t('occupational_medicine_desc'),
+      image: "/Rectangle 10.png",
+      equipment: t('audiometer_spirometer'),
+      schedule: t('mon_fri_8_17') + ', ' + t('company_appointment'),
+      doctor: t('dr_ahmed_fall'),
+      price: t('assessment_5000'),
+      type: t('assessment')
     }
   ]
 
   return (
-    <section id="services" className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+    <section id="services" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="max-w-7xl mx-auto">
-          {/* En-tête */}
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600 mb-4">
-              Nos Services Médicaux
-            </h2>
-            <div className="w-16 sm:w-20 lg:w-24 h-1 bg-green-500 mx-auto"></div>
-          </div>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-blue-600 mb-4">
+            {t('medical_services')}
+          </h2>
+          <div className="w-24 h-1 bg-green-500 mx-auto"></div>
+        </div>
 
-          {/* Grille des services */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group"
-              >
-                {/* Image du service */}
-                <div className="relative h-32 sm:h-40 lg:h-48 overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-
-                {/* Contenu de la carte */}
-                <div className="p-4 sm:p-5 lg:p-6">
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-blue-600 transition-colors duration-300">
-                    {service.title}
-                  </h3>
-
-                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-3">
-                    {service.description}
-                  </p>
-
-                  {/* Informations détaillées */}
-                  <div className="space-y-2 mb-4 text-xs">
-                    <div className="flex items-start space-x-2">
-                      <Stethoscope className="w-3 h-3 text-green-600 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-600">{service.equipments}</span>
-                    </div>
-
-                    <div className="flex items-start space-x-2">
-                      <Clock className="w-3 h-3 text-blue-600 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-600">{service.hours}</span>
-                    </div>
-
-                    <div className="flex items-start space-x-2">
-                      <User className="w-3 h-3 text-purple-600 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-600">{service.doctor}</span>
-                    </div>
-
-                    <div className="text-green-600 font-semibold">
-                      {service.price}
-                    </div>
-                  </div>
-
-                  {/* Bouton Appeler */}
-                  <Button
-                    className="w-full bg-green-600 hover:bg-green-700 text-white transition-all duration-300 transform hover:scale-105 text-sm sm:text-base py-2 sm:py-2.5"
-                    onClick={handleCallClick}
-                  >
-                    Appeler pour prendre RDV
-                  </Button>
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((service, index) => (
+            <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+              <div className="relative h-48">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
-            ))}
-          </div>
+              
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                  {service.title}
+                </h3>
+                
+                <p className="text-gray-600 mb-4 text-sm">
+                  {service.description}
+                </p>
+
+                {/* Équipement */}
+                <div className="flex items-start mb-3">
+                  <Stethoscope className="w-4 h-4 text-green-500 mt-1 mr-2 flex-shrink-0" />
+                  <span className="text-xs text-gray-600">{service.equipment}</span>
+                </div>
+
+                {/* Horaires */}
+                <div className="flex items-start mb-3">
+                  <Clock className="w-4 h-4 text-blue-500 mt-1 mr-2 flex-shrink-0" />
+                  <span className="text-xs text-gray-600">{service.schedule}</span>
+                </div>
+
+                {/* Médecin */}
+                <div className="flex items-start mb-3">
+                  <User className="w-4 h-4 text-purple-500 mt-1 mr-2 flex-shrink-0" />
+                  <span className="text-xs text-gray-600">{service.doctor}</span>
+                </div>
+
+                {/* Prix */}
+                <div className="text-green-600 font-bold text-sm mb-4">
+                  {service.price}
+                </div>
+
+                {/* Bouton Appel */}
+                <Button 
+                  onClick={handleCallClick}
+                  className="w-full bg-green-500 hover:bg-green-600 text-white"
+                >
+                  {t('call_appointment')}
+                </Button>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -162,3 +165,4 @@ const Services = () => {
 }
 
 export default Services
+

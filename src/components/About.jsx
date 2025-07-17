@@ -1,4 +1,8 @@
+import { useTranslation } from 'react-i18next'
+
 const About = () => {
+  const { t } = useTranslation()
+  
   return (
     <section id="apropos" className="py-12 sm:py-16 lg:py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -7,33 +11,21 @@ const About = () => {
             {/* Contenu texte - Mobile first */}
             <div className="space-y-4 sm:space-y-6 order-2 lg:order-1">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600 mb-4 sm:mb-6 lg:mb-8">
-                Qui sommes-nous ?
+                {t('who_are_we')}
               </h2>
 
               <div className="space-y-4 sm:space-y-6">
                 <p className="text-base sm:text-lg font-semibold text-blue-600 mb-4 sm:mb-6">
-                  Cabinet MIMAP : <span className="text-gray-900">Votre partenaire pour la santé et le bien-être de toute la famille et la santé en milieu professionnel</span>
+                  {t('about_title')}
                 </p>
 
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                  MIMAP est un groupe de médecins généralistes et spécialistes dédiés à la médecine préventive,
-                  la santé au travail et la formation certifiée en premiers secours et RCR/CPR.  Notre mission est de placer le bien-être des individus au cœur de toutes nos actions.
-                  Spécialistes dévoués à la santé et à la sérénité de toute la famille, quel que soit son âge, nous
-                  proposons des approches novatrices qui englobent à la fois les besoins familiaux et ceux
-                  des environnements professionnels.
-                  Notre équipe d'experts, certifiée par des organismes internationaux tels que l'American Heart Association,
-                  s'engage à offrir des services de qualité supérieure afin de répondre aux défis uniques de la santé
-                  familiale et professionnelle. Nous croyons fermement que le bien-être individuel et collectif est la
-                  clé d'un avenir plus harmonieux et sûr. 🎯
-                  Nous avons eu le privilège de collaborer avec des institutions prestigieuses comme la Banque mondiale
-                  et des compagnies majeures telles que Tasiast et Aura Energy. Ces partenariats renforcent notre mission :
-                  transformer les environnements familiaux et professionnels en espaces où la sécurité et la santé sont
-                  des priorités absolues.
+                  {t('about_description')}
                 </p>
 
                 <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg p-4 sm:p-6 border-l-4 border-blue-600">
                   <p className="text-sm sm:text-base font-medium text-gray-800">
-                    💡 <span className="font-bold text-blue-600">Notre objectif :</span> Accompagner chaque membre de votre famille et votre organisation à se sentir protégé, épanoui et prêt à relever tous les défis. Ensemble, faisons de la santé et du bien-être un mode de vie.
+                    <span className="font-bold text-blue-600">{t('our_objective')}</span> {t('objective_text')}
                   </p>
                 </div>
               </div>

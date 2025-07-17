@@ -1,13 +1,16 @@
 import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const Footer = () => {
+  const { t } = useTranslation()
+
   const quickLinks = [
-    { name: "Accueil", href: "#accueil" },
-    { name: "À propos", href: "#apropos" },
-    { name: "Services", href: "#services" },
-    { name: "Équipe", href: "#equipe" },
-    { name: "Galerie", href: "#galerie" },
-    { name: "Contact", href: "#contact" }
+    { name: t('home'), href: "#accueil" },
+    { name: t('about'), href: "#apropos" },
+    { name: t('services'), href: "#services" },
+    { name: t('team'), href: "#equipe" },
+    { name: t('gallery'), href: "#galerie" },
+    { name: t('contact'), href: "#contact" }
   ]
 
   return (
@@ -28,20 +31,20 @@ const Footer = () => {
                 />
                 {/* Texte en arabe et anglais sous le logo */}
                 <p className="text-xs text-gray-300 mb-4">
-                  موريتانيا الطب الباطني والطب الأطفال
+                  {t('mauritania_internal_medicine_ar')}
                   <br />
-                  MAURITANIA INTERNAL MEDICINE AND PEDIATRICS
+                  {t('mauritania_internal_medicine')}
                 </p>
               </div>
 
               <p className="text-white font-medium text-lg mb-2">
-                "Votre santé, notre priorité"
+                "{t('health_priority')}"
               </p>
             </div>
 
             {/* Liens rapides */}
             <div className="lg:col-span-1">
-              <h4 className="text-xl font-bold mb-6 text-white">Liens rapides</h4>
+              <h4 className="text-xl font-bold mb-6 text-white">{t('quick_links')}</h4>
               <div className="space-y-3">
                 {quickLinks.map((link, index) => (
                   <a
@@ -70,8 +73,7 @@ const Footer = () => {
                           rel="noopener noreferrer"
                           className="hover:text-blue-300 transition-colors duration-300 underline"
                         >
-                          <p className="font-medium">Ilot K EXT 929, Nouakchott,</p>
-                          <p>Mauritanie</p>
+                          <p className="font-medium">{t('full_address')}</p>
                         </a>
                       </div>
                     </div>
@@ -79,18 +81,18 @@ const Footer = () => {
                     <div className="flex items-center space-x-1">
                       <Mail className="w-3 h-3 lg:w-4 lg:h-4" />
                       <a
-                        href="mailto:cabinetmimap@gmail.com"
+                        href={`mailto:${t('email_address')}`}
                         className="text-xs lg:text-sm hover:text-blue-200 transition-colors underline"
                       >
-                        cabinetmimap@gmail.com
+                        {t('email_address')}
                       </a>
                     </div>
 
                     <div className="flex items-start space-x-3">
                       <Phone className="w-5 h-5 text-blue-300 flex-shrink-0 mt-1" />
                       <div className="text-white">
-                        <p>+222 3124 4404 /</p>
-                        <p>+222 4479 4404</p>
+                        <p>{t('phone_number_1')} /</p>
+                        <p>{t('phone_number_2')}</p>
                       </div>
                     </div>
                   </div>
@@ -126,20 +128,6 @@ const Footer = () => {
                     >
                       <Linkedin className="w-5 h-5 text-white" />
                     </a>
-                    {/* <a 
-                      href="#" 
-                      className="w-10 h-10 bg-blue-500 hover:bg-blue-400 rounded-full flex items-center justify-center transition-colors duration-300"
-                      aria-label="Twitter"
-                    >
-                      <Twitter className="w-5 h-5 text-white" />
-                    </a>
-                    <a 
-                      href="#" 
-                      className="w-10 h-10 bg-red-600 hover:bg-red-500 rounded-full flex items-center justify-center transition-colors duration-300"
-                      aria-label="YouTube"
-                    >
-                      <Youtube className="w-5 h-5 text-white" />
-                    </a> */}
                   </div>
                 </div>
               </div>
@@ -150,7 +138,7 @@ const Footer = () => {
           <div className="border-t border-blue-700 mt-12 pt-8">
             <div className="text-center">
               <p className="text-blue-200 text-sm">
-                © 2025 MIMAP - Tous droits réservés
+                {t('copyright_2025')}
               </p>
             </div>
           </div>

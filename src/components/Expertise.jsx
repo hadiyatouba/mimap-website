@@ -1,38 +1,40 @@
 import { useState } from 'react'
 import { Users, Briefcase, Heart, Shield, ChevronLeft, ChevronRight } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const Expertise = () => {
+  const { t } = useTranslation()
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const expertises = [
     {
       icon: Heart,
-      title: "Santé de la famille",
-      description: "Programmes et ateliers adaptés à toutes les étapes de la vie : petite enfance, adultes, seniors.",
+      title: t('family_health'),
+      description: t('family_health_desc'),
       color: "bg-green-100",
       iconColor: "text-green-600",
       bgCard: "bg-white"
     },
     {
       icon: Briefcase,
-      title: "Santé au travail",
-      description: "Prévention, sécurité en entreprise et gestion des urgences professionnelles.",
-      color: "bg-blue-600",
-      iconColor: "text-green-400",
+      title: t('occupational_health'),
+      description: t('occupational_health_desc'),
+      color: "bg-blue-100",
+      iconColor: "text-blue-600",
       bgCard: "bg-blue-600 text-white"
     },
     {
-      icon: Heart,
-      title: "Santé de la famille",
-      description: "Programmes et ateliers adaptés à toutes les étapes de la vie : petite enfance, adultes, seniors.",
-      color: "bg-green-100",
-      iconColor: "text-green-600",
+      icon: Users,
+      title: t('community_health'),
+      description: t('community_health_desc'),
+      color: "bg-orange-100",
+      iconColor: "text-orange-600",
       bgCard: "bg-white"
     },
     {
       icon: Shield,
-      title: "Santé préventive",
-      description: "Prévention et suivi médical personnalisé pour maintenir une santé optimale.",
+      title: t('preventive_health'),
+      description: t('preventive_health_desc'),
       color: "bg-purple-100",
       iconColor: "text-purple-600",
       bgCard: "bg-white"
@@ -55,22 +57,22 @@ const Expertise = () => {
     <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          {/* En-tête - Mobile first responsive */}
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <p className="text-green-600 font-semibold text-base sm:text-lg mb-2">
-              Expertises Clés
+          {/* En-tête */}
+          <div className="text-center mb-8 sm:mb-12">
+            <p className="text-green-500 font-semibold text-sm sm:text-base mb-2 uppercase tracking-wide">
+              {t('key_expertise')}
             </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-900 mb-4 sm:mb-6">
-              Nos Domaines d'Excellence
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600 mb-4">
+              {t('excellence_domains')}
             </h2>
-            <p className="text-sm sm:text-base text-gray-700 max-w-full sm:max-w-2xl mx-auto px-4 sm:px-0">
-              Découvrez les piliers de notre engagement pour une santé complète, durable et accessible à tous.
+            <p className="text-gray-600 text-base sm:text-lg max-w-3xl mx-auto">
+              {t('excellence_subtitle')}
             </p>
+            <div className="w-20 h-1 bg-green-500 mx-auto mt-4"></div>
           </div>
 
-          {/* Carrousel - Mobile first responsive */}
+          {/* Carousel - Mobile: single card, Tablet+: multiple cards */}
           <div className="relative">
-            {/* Conteneur du carrousel - Mobile: single card, Tablet+: multiple cards */}
             <div className="overflow-hidden">
               {/* Mobile: Stack cards vertically */}
               <div className="block sm:hidden">
@@ -152,14 +154,14 @@ const Expertise = () => {
               onClick={prevSlide}
               className="absolute left-0 sm:-left-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 sm:p-3 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-blue-50 active:scale-95 z-10"
             >
-              <ChevronLeft className="w-4 h-4 sm:w-5 lg:w-6 h-4 sm:h-5 lg:h-6 text-gray-600 hover:text-blue-600 transition-colors duration-300" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 lg:w-6 sm:h-5 lg:h-6 text-gray-600 hover:text-blue-600 transition-colors duration-300" />
             </button>
 
             <button
               onClick={nextSlide}
-              className="absolute right-0 sm:right-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 sm:p-3 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-blue-50 active:scale-95 z-10"
+              className="absolute right-0 sm:-right-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 sm:p-3 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-blue-50 active:scale-95 z-10"
             >
-              <ChevronRight className="w-4 h-4 sm:w-5 lg:w-6 h-4 sm:h-5 lg:h-6 text-gray-600 hover:text-blue-600 transition-colors duration-300" />
+              <ChevronRight className="w-4 h-4 sm:w-5 lg:w-6 sm:h-5 lg:h-6 text-gray-600 hover:text-blue-600 transition-colors duration-300" />
             </button>
           </div>
 

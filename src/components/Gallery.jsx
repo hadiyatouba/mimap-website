@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { X, ChevronLeft, ChevronRight, Facebook, Eye, Users, Building, Stethoscope, Heart } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const Gallery = () => {
+  const { t } = useTranslation()
   const [selectedImage, setSelectedImage] = useState(null)
   const [currentIndex, setCurrentIndex] = useState(0)
 
@@ -10,43 +12,43 @@ const Gallery = () => {
       id: 1,
       src: "/Box 1.png",
       alt: "Équipe MIMAP en réunion",
-      category: "Équipe",
-      description: "Réunion d'équipe pour planifier les activités de santé préventive"
+      category: t('team_category'),
+      description: t('team_meeting')
     },
     {
       id: 2,
       src: "/Rectangle 1.png",
       alt: "Consultation médicale",
-      category: "Soins",
-      description: "Consultation avec nos spécialistes en diabète et hypertension"
+      category: t('care_category'),
+      description: t('medical_care')
     },
     {
       id: 3,
       src: "/Box 3.png",
       alt: "Infrastructure moderne",
-      category: "Infrastructure",
-      description: "Nos installations modernes pour un accueil optimal"
+      category: t('infrastructure_category'),
+      description: t('modern_infrastructure')
     },
     {
       id: 4,
       src: "/Background image box.png",
       alt: "Formation du personnel",
-      category: "Formation",
-      description: "Formation continue de notre équipe médicale"
+      category: t('training_category'),
+      description: t('continuous_training')
     },
     {
       id: 5,
       src: "/Box 5.png",
       alt: "Équipement médical",
-      category: "Équipement",
-      description: "Équipements de pointe pour diagnostics précis"
+      category: t('equipment_category'),
+      description: t('advanced_equipment')
     },
     {
       id: 6,
       src: "/Box 4 (1).png",
       alt: "Accueil patients",
-      category: "Accueil",
-      description: "Espace d'accueil chaleureux pour nos patients"
+      category: t('reception_category'),
+      description: t('warm_reception')
     }
   ]
 
@@ -72,15 +74,14 @@ const Gallery = () => {
   }
 
   const getCategoryIcon = (category) => {
-    switch (category) {
-      case 'Équipe': return <Users className="w-4 h-4" />
-      case 'Soins': return <Heart className="w-4 h-4" />
-      case 'Infrastructure': return <Building className="w-4 h-4" />
-      case 'Formation': return <Stethoscope className="w-4 h-4" />
-      case 'Équipement': return <Stethoscope className="w-4 h-4" />
-      case 'Accueil': return <Users className="w-4 h-4" />
-      default: return <Eye className="w-4 h-4" />
-    }
+    // Utiliser les clés de traduction pour la comparaison
+    if (category === t('team_category')) return <Users className="w-4 h-4" />
+    if (category === t('care_category')) return <Heart className="w-4 h-4" />
+    if (category === t('infrastructure_category')) return <Building className="w-4 h-4" />
+    if (category === t('training_category')) return <Stethoscope className="w-4 h-4" />
+    if (category === t('equipment_category')) return <Stethoscope className="w-4 h-4" />
+    if (category === t('reception_category')) return <Users className="w-4 h-4" />
+    return <Eye className="w-4 h-4" />
   }
 
   return (
@@ -90,10 +91,10 @@ const Gallery = () => {
           {/* En-tête */}
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600 mb-4">
-              Galerie MIMAP
+              {t('mimap_gallery')}
             </h2>
             <p className="text-gray-600 text-lg mb-6">
-              Découvrez nos actions, notre équipe et nos infrastructures en images
+              {t('gallery_subtitle')}
             </p>
             <div className="w-20 h-1 bg-green-500 mx-auto"></div>
           </div>
@@ -146,7 +147,7 @@ const Gallery = () => {
               className="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               <Facebook className="w-5 h-5" />
-              Voir plus sur Facebook
+              {t('see_more_facebook')}
             </a>
           </div>
         </div>

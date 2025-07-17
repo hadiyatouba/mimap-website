@@ -1,30 +1,32 @@
 import { useState } from 'react'
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const Testimonials = () => {
+  const { t } = useTranslation()
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
 
   const testimonials = [
     {
-      text: "« Nous voulons venir en aide aux personnes en situation difficile… les personnes atteintes du diabète et de l'hypertension seront suivies par les spécialistes. »",
-      author: "Dr Khadija Faye",
-      role: "Directrice MIMAP",
+      text: t('testimonial_quote'),
+      author: t('dr_khadija_faye'),
+      role: t('mimap_director'),
       image: "/Rectangle 2.png",
-      source: "Interview Kassataya"
+      source: t('kassataya_interview')
     },
     {
-      text: "« MIMAP représente un modèle d'innovation dans le domaine de la santé préventive en Mauritanie, avec une approche centrée sur le patient. »",
-      author: "Partenaire institutionnel",
-      role: "Banque Mondiale",
+      text: t('innovation_model'),
+      author: t('institutional_partner'),
+      role: t('world_bank'),
       image: "/fixed-height sec-.png",
-      source: "Rapport d'évaluation"
+      source: t('evaluation_report')
     },
     {
-      text: "« L'équipe MIMAP nous a accompagnés dans la mise en place d'un programme de santé au travail exemplaire pour nos employés. »",
-      author: "Responsable RH",
-      role: "Tasiast Mining",
+      text: t('workplace_health'),
+      author: t('hr_manager'),
+      role: t('tasiast_mining'),
       image: "/Image docteur.png",
-      source: "Témoignage client"
+      source: t('client_testimonial')
     }
   ]
 
@@ -43,7 +45,7 @@ const Testimonials = () => {
           {/* En-tête */}
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600 mb-4">
-              Témoignages et Avis
+              {t('testimonials_reviews')}
             </h2>
             <div className="w-20 h-1 bg-green-500 mx-auto"></div>
           </div>

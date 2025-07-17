@@ -1,7 +1,10 @@
 import { Button } from '@/components/ui/button'
 import { Calendar, Phone } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const Hero = () => {
+  const { t } = useTranslation()
+  
   const handleDiscoverClick = () => {
     const element = document.querySelector('#apropos')
     if (element) {
@@ -44,15 +47,11 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 py-12 sm:py-16 lg:py-20">
         <div className="max-w-full sm:max-w-2xl lg:max-w-3xl">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-blue-900 mb-4 sm:mb-6 leading-tight">
-            Votre santé,
-            <br />
-            <span className="text-blue-900">notre priorité</span>
+            {t('hero_title')}
           </h1>
           
           <p className="text-base sm:text-lg lg:text-xl text-black mb-6 sm:mb-8 leading-relaxed max-w-full sm:max-w-lg lg:max-w-xl">
-            MIMAP vous accompagne dans la médecine préventive,
-            la santé familiale, la santé au travail et les formations en
-            premiers secours.
+            {t('hero_subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -62,7 +61,7 @@ const Hero = () => {
               onClick={handleCallClick}
             >
               <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-              Appeler pour prendre RDV
+              {t('call_appointment')}
             </Button>
             
             <Button
@@ -71,7 +70,7 @@ const Hero = () => {
               className="border-2 border-blue-600 text-blue-600 hover:bg-blue-900 hover:text-white px-6 sm:px-8 py-3 text-base sm:text-lg rounded-lg w-full sm:w-auto"
               onClick={handleDiscoverClick}
             >
-              Découvrir MIMAP
+              {t('discover_mimap')}
             </Button>
           </div>
         </div>

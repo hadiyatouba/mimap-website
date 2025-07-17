@@ -10,8 +10,11 @@ import Gallery from './components/Gallery'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import './App.css'
+import { useTranslation } from 'react-i18next';
 
 function App() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -32,3 +35,5 @@ function App() {
 }
 
 export default App
+
+

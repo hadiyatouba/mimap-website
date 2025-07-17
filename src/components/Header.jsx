@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Menu, X, Phone, Mail, MapPin, MessageCircle } from 'lucide-react'
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeLink, setActiveLink] = useState('#accueil')
+  const { t, i18n } = useTranslation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -25,10 +27,6 @@ const Header = () => {
     window.open('https://wa.me/22231244404', '_blank')
   }
 
-  const handleCall = () => {
-    window.location.href = 'tel:+22231244404'
-  }
-
   const handleCallNowClick = () => {
     const element = document.querySelector('#contact')
     if (element) {
@@ -37,6 +35,10 @@ const Header = () => {
     // Fermer le menu mobile si ouvert
     setIsMenuOpen(false)
   }
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
 
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
@@ -47,15 +49,15 @@ const Header = () => {
             <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-2 sm:space-y-0">
               <div className="flex items-center space-x-1">
                 <Phone className="w-3 h-3 lg:w-4 lg:h-4" />
-                <span className="text-xs lg:text-sm">+222 3124 4404 / 4479 4404</span>
+                <span className="text-xs lg:text-sm">{t('phone_number_1')} / {t('phone_number_2').replace('+222 ', '')}</span>
               </div>
               <div className="flex items-center space-x-1">
                 <Mail className="w-3 h-3 lg:w-4 lg:h-4" />
                 <a
-                  href="mailto:cabinetmimap@gmail.com"
+                  href={`mailto:${t('email_address')}`}
                   className="text-xs lg:text-sm hover:text-blue-200 transition-colors underline"
                 >
-                  cabinetmimap@gmail.com
+                  {t('email_address')}
                 </a>
               </div>
             </div>
@@ -63,15 +65,15 @@ const Header = () => {
               <div className="flex items-center space-x-1">
                 <MapPin className="w-3 h-3 lg:w-4 lg:h-4" />
                 <div className="flex flex-col">
-                  <span className="text-xs lg:text-sm">NOUAKCHOTT</span>
+                  <span className="text-xs lg:text-sm">{t('nouakchott')}</span>
                   <span className="text-xs lg:text-sm">Ilot K EXT 929</span>
                 </div>
               </div>
               <div className="flex items-center space-x-1">
                 <span className="text-xs lg:text-sm">🕐</span>
                 <div className="flex flex-col">
-                  <span className="text-xs lg:text-sm">LUN–JEU</span>
-                  <span className="text-xs lg:text-sm">15h–22h ; Sam : 10h–17h</span>
+                  <span className="text-xs lg:text-sm">{t('mon_thu')}</span>
+                  <span className="text-xs lg:text-sm">{t('schedule_summary')}</span>
                 </div>
               </div>
               <div className="flex items-center space-x-1">
@@ -80,7 +82,7 @@ const Header = () => {
                   onClick={handleWhatsApp}
                   className="underline text-xs lg:text-sm hover:text-blue-200 transition-colors"
                 >
-                  Connect on Whatsapp
+                  {t('connect_whatsapp')}
                 </button>
               </div>
             </div>
@@ -91,12 +93,12 @@ const Header = () => {
       {/* Main navigation */}
       <nav className="container mx-auto px-4 py-3 lg:py-4">
         <div className="flex justify-between items-center">
-          {/* Logo - Responsive sizing */}
+          {/* Logo - Responsive sizing - Increased size */}
           <div className="flex items-center">
             <img
               src="/ogoMIMAP by Toutou [Récupéré]_Plan de travail 1 1 (1).png"
               alt="MIMAP Logo"
-              className="h-8 sm:h-10 lg:h-12 w-auto"
+              className="h-12 sm:h-14 lg:h-16 xl:h-18 w-auto"
             />
           </div>
 
@@ -108,7 +110,7 @@ const Header = () => {
               className={`text-gray-700 hover:text-blue-600 transition-colors font-medium pb-2 border-b-2 text-sm xl:text-base ${activeLink === '#accueil' ? 'border-blue-600 text-blue-600' : 'border-transparent'
                 }`}
             >
-              Accueil
+              {t('home')}
             </a>
             <a
               href="#apropos"
@@ -116,7 +118,7 @@ const Header = () => {
               className={`text-gray-700 hover:text-blue-600 transition-colors font-medium pb-2 border-b-2 text-sm xl:text-base ${activeLink === '#apropos' ? 'border-blue-600 text-blue-600' : 'border-transparent'
                 }`}
             >
-              À propos
+              {t('about')}
             </a>
             <a
               href="#services"
@@ -124,7 +126,7 @@ const Header = () => {
               className={`text-gray-700 hover:text-blue-600 transition-colors font-medium pb-2 border-b-2 text-sm xl:text-base ${activeLink === '#services' ? 'border-blue-600 text-blue-600' : 'border-transparent'
                 }`}
             >
-              Services
+              {t('services')}
             </a>
             <a
               href="#equipe"
@@ -132,7 +134,7 @@ const Header = () => {
               className={`text-gray-700 hover:text-blue-600 transition-colors font-medium pb-2 border-b-2 text-sm xl:text-base ${activeLink === '#equipe' ? 'border-blue-600 text-blue-600' : 'border-transparent'
                 }`}
             >
-              Équipe
+              {t('team')}
             </a>
             <a
               href="#blog"
@@ -140,7 +142,7 @@ const Header = () => {
               className={`text-gray-700 hover:text-blue-600 transition-colors font-medium pb-2 border-b-2 text-sm xl:text-base ${activeLink === '#blog' ? 'border-blue-600 text-blue-600' : 'border-transparent'
                 }`}
             >
-              Blog
+              {t('blog')}
             </a>
             <a
               href="#gallery"
@@ -148,7 +150,7 @@ const Header = () => {
               className={`text-gray-700 hover:text-blue-600 transition-colors font-medium pb-2 border-b-2 text-sm xl:text-base ${activeLink === '#gallery' ? 'border-blue-600 text-blue-600' : 'border-transparent'
                 }`}
             >
-              Gallery
+              {t('gallery')}
             </a>
             <a
               href="#contact"
@@ -156,8 +158,13 @@ const Header = () => {
               className={`text-gray-700 hover:text-blue-600 transition-colors font-medium pb-2 border-b-2 text-sm xl:text-base ${activeLink === '#contact' ? 'border-blue-600 text-blue-600' : 'border-transparent'
                 }`}
             >
-              Contact
+              {t('contact')}
             </a>
+            <div className="flex items-center space-x-2">
+              <button onClick={() => changeLanguage('fr')} className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm xl:text-base">FR</button>
+              <button onClick={() => changeLanguage('en')} className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm xl:text-base">EN</button>
+              <button onClick={() => changeLanguage('ar')} className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm xl:text-base">AR</button>
+            </div>
           </div>
 
           {/* Call to action button - Hidden on mobile, visible on desktop */}
@@ -166,7 +173,7 @@ const Header = () => {
               className="bg-green-600 hover:bg-green-700 text-white rounded-full px-4 xl:px-6 py-2 text-sm xl:text-base"
               onClick={handleCallNowClick}
             >
-              Appeler maintenant
+              {t('call_now')}
             </Button>
           </div>
 
@@ -189,60 +196,65 @@ const Header = () => {
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 px-2 rounded-lg hover:bg-gray-50"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Accueil
+                {t('home')}
               </a>
               <a
                 href="#apropos"
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 px-2 rounded-lg hover:bg-gray-50"
                 onClick={() => setIsMenuOpen(false)}
               >
-                À propos
+                {t('about')}
               </a>
               <a
                 href="#services"
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 px-2 rounded-lg hover:bg-gray-50"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Services
+                {t('services')}
               </a>
               <a
                 href="#equipe"
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 px-2 rounded-lg hover:bg-gray-50"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Équipe
+                {t('team')}
               </a>
               <a
                 href="#blog"
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 px-2 rounded-lg hover:bg-gray-50"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Blog
+                {t('blog')}
               </a>
               <a
                 href="#gallery"
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 px-2 rounded-lg hover:bg-gray-50"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Gallery
+                {t('gallery')}
               </a>
               <a
                 href="#contact"
                 className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 px-2 rounded-lg hover:bg-gray-50"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Contact
+                {t('contact')}
               </a>
+              <div className="flex items-center space-x-2 pt-4 border-t border-gray-200">
+                <button onClick={() => changeLanguage('fr')} className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 px-2 rounded-lg hover:bg-gray-50">FR</button>
+                <button onClick={() => changeLanguage('en')} className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 px-2 rounded-lg hover:bg-gray-50">EN</button>
+                <button onClick={() => changeLanguage('ar')} className="text-gray-700 hover:text-blue-600 transition-colors font-medium py-2 px-2 rounded-lg hover:bg-gray-50">AR</button>
+              </div>
 
               {/* Mobile contact info */}
               <div className="pt-4 border-t border-gray-200 space-y-3">
                 <div className="flex items-center space-x-2 text-sm text-gray-600">
                   <Phone className="w-4 h-4" />
-                  <span>+222 3124 4404</span>
+                  <span>{t('phone_number_1')}</span>
                 </div>
                 <div className="flex items-center space-x-2 text-sm text-gray-600">
                   <Mail className="w-4 h-4" />
-                  <span>cabinetmimap@gmail.com</span>
+                  <span>{t('email_address')}</span>
                 </div>
               </div>
 
@@ -250,7 +262,7 @@ const Header = () => {
                 className="bg-green-600 hover:bg-green-700 text-white w-full rounded-full py-3 mt-4"
                 onClick={handleCallNowClick}
               >
-                Appeler maintenant
+                {t('call_now')}
               </Button>
             </div>
           </div>

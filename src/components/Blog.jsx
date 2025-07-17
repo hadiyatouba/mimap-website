@@ -1,31 +1,33 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const Blog = () => {
+  const { t } = useTranslation()
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const articles = [
     {
       image: "/image box.png",
-      category: "Prévention / Sensibilisation",
-      title: "Journée Portes Ouvertes avec SOS Diabète",
-      description: "Une journée de dépistage et de sensibilisation organisée par MIMAP en collaboration avec SOS Diabète, dédiée à la prévention du diabète.",
-      date: "24 avril 2025"
+      category: t('prevention_awareness'),
+      title: t('open_house_diabetes'),
+      description: t('open_house_desc'),
+      date: t('april_24_2025')
     },
     {
       image: "/Box 1.png",
-      category: "Formation",
-      title: "Formation en Premiers Secours",
-      description: "Nouvelle session de formation certifiée AHA pour les entreprises et particuliers.",
-      date: "15 mai 2025"
+      category: t('training'),
+      title: t('first_aid_training'),
+      description: t('first_aid_desc'),
+      date: t('may_15_2025')
     },
     {
       image: "/Background image box (2).png",
-      category: "Médecine du travail",
-      title: "Programme Check-up Entreprise",
-      description: "Lancement de notre nouveau programme de bilan de santé pour les employés.",
-      date: "30 mai 2025"
+      category: t('occupational_medicine_cat'),
+      title: t('company_checkup'),
+      description: t('company_checkup_desc'),
+      date: t('may_30_2025')
     }
   ]
 
@@ -44,7 +46,7 @@ const Blog = () => {
           {/* En-tête */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-blue-600 mb-4">
-              Actualités et Blog
+              {t('news_blog')}
             </h2>
           </div>
 
@@ -112,7 +114,7 @@ const Blog = () => {
                     <svg className="w-4 h-4 mr-2 inline" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                     </svg>
-                    Voir sur Facebook
+                    {t('see_facebook')}
                   </Button>
                 </div>
               </div>

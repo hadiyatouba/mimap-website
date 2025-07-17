@@ -1,14 +1,20 @@
 import { MapPin, Clock, Phone, Mail, MessageCircle, Calendar } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { useTranslation } from 'react-i18next'
 
 const Contact = () => {
+  const { t } = useTranslation()
   
   const handleWhatsApp = () => {
     window.open('https://wa.me/22231244404', '_blank')
   }
 
   const handleEmail = () => {
-    window.location.href = 'mailto:cabinetmimap@gmail.com'
+    window.location.href = `mailto:${t('email_address')}`
+  }
+
+  const handlePhoneCall = (phoneNumber) => {
+    window.location.href = `tel:${phoneNumber}`
   }
 
   return (
@@ -16,13 +22,13 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* En-tête */}
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-600 mb-4">
-              Contact et Rendez-vous
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-blue-600 mb-4">
+              {t('contact_appointment')}
             </h2>
-            <div className="w-20 h-1 bg-green-500 mx-auto mb-4"></div>
-            <p className="text-base sm:text-lg text-gray-600">
-              Prenez rendez-vous par téléphone ou venez nous rendre visite
+            <div className="w-20 h-1 bg-green-500 mx-auto mb-6"></div>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              {t('contact_subtitle')}
             </p>
           </div>
 
@@ -31,21 +37,18 @@ const Contact = () => {
             <div className="max-w-3xl mx-auto">
               <Calendar className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 text-white" />
               <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-                Prendre Rendez-vous
+                {t('take_appointment')}
               </h3>
-              <p className="text-base sm:text-lg mb-6 opacity-90">
-                Appelez-nous directement pour prendre rendez-vous avec nos spécialistes
+              <p className="text-lg sm:text-xl mb-6 opacity-90">
+                {t('call_specialists')}
               </p>
-
-              <div className="flex justify-center items-center">
-                <Button
-                  onClick={handleWhatsApp}
-                  className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 text-base sm:text-lg font-semibold rounded-lg transition-all duration-300 hover:scale-105"
-                >
-                  <MessageCircle className="w-5 h-5 mr-2" />
-                  WhatsApp
-                </Button>
-              </div>
+              <Button 
+                onClick={handleWhatsApp}
+                className="bg-green-500 hover:bg-green-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+              >
+                <MessageCircle className="w-5 h-5 mr-2" />
+                {t('whatsapp')}
+              </Button>
             </div>
           </div>
 
@@ -60,10 +63,9 @@ const Contact = () => {
                     <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">Adresse</h3>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{t('address')}</h3>
                     <p className="text-sm sm:text-base text-gray-700">
-                      Ilot K EXT 929<br />
-                      NOUAKCHOTT, MAURITANIE
+                      {t('full_address')}
                     </p>
                   </div>
                 </div>
@@ -76,12 +78,12 @@ const Contact = () => {
                     <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />
                   </div>
                   <div>
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">Horaires d'ouverture</h3>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{t('opening_hours')}</h3>
                     <div className="text-sm sm:text-base text-gray-700 space-y-1">
-                      <p>Lun–Jeu : 15h–22h</p>
-                      <p>Ven : 16h–22h</p>
-                      <p>Sam : 10h–17h</p>
-                      <p className="text-red-600 font-medium">Dim : Fermé</p>
+                      <p>{t('mon_thu')} : {t('hours_mon_thu')}</p>
+                      <p>{t('fri')} : {t('hours_fri')}</p>
+                      <p>{t('sat')} : {t('hours_sat')}</p>
+                      <p className="text-red-600 font-medium">{t('sun')} : {t('closed')}</p>
                     </div>
                   </div>
                 </div>
@@ -94,19 +96,19 @@ const Contact = () => {
                     <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-orange-600" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">Téléphone</h3>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{t('phone')}</h3>
                     <div className="text-sm sm:text-base text-gray-700 space-y-2">
                       <button
                         onClick={() => handlePhoneCall('+22231244404')}
                         className="block hover:text-blue-600 transition-colors cursor-pointer"
                       >
-                        📞 +222 3124 4404
+                        📞 {t('phone_number_1')}
                       </button>
                       <button
                         onClick={() => handlePhoneCall('+22244794404')}
                         className="block hover:text-blue-600 transition-colors cursor-pointer"
                       >
-                        📞 +222 4479 4404
+                        📞 {t('phone_number_2')}
                       </button>
                     </div>
                   </div>
@@ -120,12 +122,12 @@ const Contact = () => {
                     <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
                   </div>
                   <div>
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">Email</h3>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{t('email')}</h3>
                     <button
                       onClick={handleEmail}
                       className="text-sm sm:text-base text-gray-700 hover:text-blue-600 transition-colors cursor-pointer"
                     >
-                      ✉️ cabinetmimap@gmail.com
+                      ✉️ {t('email_address')}
                     </button>
                   </div>
                 </div>
@@ -135,7 +137,7 @@ const Contact = () => {
             {/* Carte Google Maps */}
             <div className="bg-white rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg">
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">
-                Plan d'accès
+                {t('access_map')}
               </h3>
 
               {/* Placeholder pour Google Maps - À remplacer par la vraie carte */}
@@ -144,14 +146,13 @@ const Contact = () => {
                 <div className="text-center px-4">
                   <MapPin className="w-12 h-12 sm:w-16 sm:h-16 text-blue-600 mx-auto mb-4" />
                   <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
-                    Cabinet MIMAP
+                    {t('cabinet_mimap')}
                   </h4>
                   <p className="text-sm sm:text-base text-gray-700 mb-4">
-                    Ilot K EXT 929<br />
-                    Nouakchott, Mauritanie
+                    {t('full_address')}
                   </p>
                   <p className="text-blue-600 font-semibold text-sm sm:text-base mb-4">
-                    "Votre santé, notre priorité"
+                    "{t('health_priority')}"
                   </p>
 
                   {/* Bouton pour ouvrir Google Maps */}
@@ -160,7 +161,7 @@ const Contact = () => {
                     className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 text-sm rounded-lg"
                   >
                     <MapPin className="w-4 h-4 mr-2" />
-                    Ouvrir dans Google Maps
+                    {t('open_google_maps')}
                   </Button>
                 </div>
               </div>
