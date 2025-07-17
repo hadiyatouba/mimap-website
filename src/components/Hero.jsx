@@ -31,7 +31,7 @@ const Hero = () => {
       </div>
 
       {/* Image du médecin à droite */}
-      <div className="absolute right-0 top-1 w-2/5 h-full z-5">
+      <div className="absolute right-0 top-1 w-2/5 h-full z-5 opacity-64">
         <img
           src="/Image docteur.png"
           alt="Médecin MIMAP"
