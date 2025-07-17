@@ -9,67 +9,59 @@ const Team = () => {
 
   const teamMembers = [
     {
-      name: t('dr_kader_kane'),
+      name: t('dr_amadou_kane'), // ✅ Ajouté aux traductions
       specialty: t('family_doctor'),
-      image: "/image box.png",
+      image: "/Background image box (1).png",
       diplomas: t('general_medicine_diploma'),
-      schedule: t('mon_thu_15_22') + ', ' + t('sat_10_17')
     },
     {
-      name: t('dr_m_mohamed_kane'),
+      name: t('dr_mamoudou_mohamed_kane'), // ✅ Déjà traduit
       specialty: t('psychiatrist'),
       image: "/user-cover-3.png",
       diplomas: t('psychiatry_diplomas'),
       schedule: t('tue_thu_14_20') + ', ' + t('by_appointment')
     },
     {
-      name: t('dr_fatimetou_kane'),
+      name: t('dr_fatimetou_kane'), // ✅ Déjà traduit
       specialty: t('general_practitioner'),
-      image: "/public/Box 3.png",
+      image: "/image.png",
       diplomas: t('general_medicine_diploma'),
-      schedule: t('mon_thu_15_22') + ', ' + t('sat_10_17')
     },
     {
-      name: t('dr_rokia_maguirega'),
+      name: t('dr_rokia_maguirega'), // ✅ Déjà traduit
       specialty: t('pediatrician'),
-      image: "/fixed-height sec- (1).png",
+      image: "/image copy.png",
       diplomas: t('pediatrics_diploma'),
-      schedule: t('mon_thu_16_21') + ', ' + t('sat_10_16')
     },
     {
-      name: t('dr_faty_gata_ba'),
+      name: t('dr_faty_gata_ba'), // ✅ Ajouté aux traductions
       specialty: t('cardiologist'),
-      image: "/Background image box (1).png",
+      image: "/medecin-afro-americain-montrant-image-cardiovasculaire-tablette-au-patient-pour-diagnostic-cardiologie-medecin-noir-expliquant-etat-cardiaque-flux-sanguin-jeune-gadget_482257-42642.avif",
       diplomas: t('cardiology_diploma'),
-      schedule: t('mon_fri_8_17') + ', ' + t('by_appointment')
     },
     {
-      name: t('dr_cheikh_diouf'),
+      name: t('dr_cheikh_diouf'), // ✅ Ajouté aux traductions
       specialty: t('general_sports_medicine'),
-      image: "/Background image box.png",
+      image: "/Box 3.png",
       diplomas: t('sports_medicine_diplomas'),
-      schedule: t('mon_fri_8_18') + ', ' + t('by_appointment')
     },
     {
-      name: t('dr_mohamed_y_bowba'),
+      name: t('dr_mohamed_y_bowba'), // ✅ Ajouté aux traductions
       specialty: t('urologist'),
-      image: "/Background image box (2).png",
+      image: "/xuroflometria-box.jpg.pagespeed.ic.H24sOCaR67.webp",
       diplomas: t('urology_diploma'),
-      schedule: t('mon_wed_15_19') + ', ' + t('by_appointment')
     },
     {
-      name: t('dr_habiboulah'),
+      name: t('dr_hassimiou_kebe'), // ✅ Ajouté aux traductions (corrigé)
       specialty: t('assistant_chief_infectious'),
-      image: "/Background image box (3).png",
+      image: "/fixed-height sec-.png",
       diplomas: t('infectious_diseases_diploma'),
-      schedule: t('mon_thu_15_22') + ', ' + t('emergency_24_7')
     },
     {
-      name: t('dr_kebe_hassimiou'),
+      name: t('dr_mohamed_yahya_bowba_et_dr_amadou_kane'), // ✅ Clé corrigée
       specialty: t('occupational_medicine'),
-      image: "/Background image box (4).png",
+      image: "/Background image box (1).png",
       diplomas: t('occupational_medicine_diploma'),
-      schedule: t('mon_fri_8_17') + ', ' + t('company_appointment')
     }
   ]
 
@@ -131,41 +123,41 @@ const Team = () => {
 
           {/* Conteneur des cartes */}
           <div className="overflow-hidden mx-12">
-            <div 
+            <div
               className="flex transition-transform duration-500 ease-in-out"
-              style={{ 
+              style={{
                 transform: `translateX(-${currentSlide * (100 / cardsPerView)}%)`,
                 width: `${(teamMembers.length / cardsPerView) * 100}%`
               }}
             >
               {teamMembers.map((member, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="flex-shrink-0 px-4"
                   style={{ width: `${100 / teamMembers.length}%` }}
                 >
                   <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                     <div className="relative h-64">
-                      <img 
-                        src={member.image} 
+                      <img
+                        src={member.image}
                         alt={member.name}
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    
+
                     <div className="p-6 text-center">
                       <h3 className="text-xl font-bold text-gray-800 mb-2">
                         {member.name}
                       </h3>
-                      
+
                       <p className="text-blue-600 font-medium mb-3">
                         {member.specialty}
                       </p>
-                      
+
                       <p className="text-gray-600 text-sm mb-3">
                         {member.diplomas}
                       </p>
-                      
+
                       <p className="text-gray-500 text-xs mb-4">
                         {member.schedule}
                       </p>
@@ -192,9 +184,8 @@ const Team = () => {
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                  currentSlide === index ? 'bg-green-500' : 'bg-gray-300'
-                }`}
+                className={`w-3 h-3 rounded-full transition-colors duration-300 ${currentSlide === index ? 'bg-green-500' : 'bg-gray-300'
+                  }`}
                 aria-label={`${t('slide')} ${index + 1}`}
               />
             ))}

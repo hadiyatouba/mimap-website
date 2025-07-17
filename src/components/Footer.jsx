@@ -91,7 +91,7 @@ const Footer = () => {
                     <div className="flex items-start space-x-3">
                       <Phone className="w-5 h-5 text-blue-300 flex-shrink-0 mt-1" />
                       <div className="text-white">
-                        <p>{t('phone_number_1')} /</p>
+                        <p>{t('phone_number_1')}</p>
                         <p>{t('phone_number_2')}</p>
                       </div>
                     </div>

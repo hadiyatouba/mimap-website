@@ -18,14 +18,14 @@ const Testimonials = () => {
       text: t('innovation_model'),
       author: t('institutional_partner'),
       role: t('world_bank'),
-      image: "/fixed-height sec-.png",
+      image: "/images.jpeg",
       source: t('evaluation_report')
     },
     {
       text: t('workplace_health'),
       author: t('hr_manager'),
       role: t('tasiast_mining'),
-      image: "/Image docteur.png",
+      image: "/d4f89f63d56af996103c2508e15aba0f.jpeg",
       source: t('client_testimonial')
     }
   ]

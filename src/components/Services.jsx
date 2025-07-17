@@ -1,10 +1,10 @@
 import { Button } from '@/components/ui/button'
-import { Heart, Clock, User, Stethoscope } from 'lucide-react'
+import { Heart, User } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 const Services = () => {
   const { t } = useTranslation()
-  
+
   const handleCallClick = () => {
     const element = document.querySelector('#contact')
     if (element) {
@@ -16,81 +16,65 @@ const Services = () => {
     {
       title: t('general_medicine'),
       description: t('general_medicine_desc'),
-      image: "/Rectangle 3.png",
-      equipment: t('tensiometer_stethoscope'),
-      schedule: t('mon_thu_15_23') + ', ' + t('sat_10_17'),
+      image: "/image.png",
       doctor: t('dr_fatimetou_kane'),
-      price: t('consultation_2500'),
+      price: t('consultation_500'),
       type: t('consultation')
     },
     {
       title: t('family_medicine'),
       description: t('family_medicine_desc'),
-      image: "/Rectangle 4.png",
-      equipment: t('pediatric_equipment'),
-      schedule: t('mon_thu_15_23') + ', ' + t('sat_10_17'),
-      doctor: t('dr_kader_kane'),
-      price: t('family_consultation_3000'),
+      image: "/Background image box (1).png",
+      doctor: t('dr_amadou_kane_et_dr_cheikh_diouf'), // ✅ Clé corrigée
+      price: t('consultation_500'),
       type: t('consultation')
     },
     {
       title: t('pediatrics'),
       description: t('pediatrics_desc'),
-      image: "/Rectangle 5.png",
-      equipment: t('pediatric_balance'),
-      schedule: t('mon_thu_16_21') + ', ' + t('sat_10_16'),
-      doctor: t('dr_aicha_sow'),
-      price: t('child_consultation_2000'),
+      image: "/image copy.png",
+      doctor: t('dr_rokia_maguirega'),
+      price: t('child_consultation_1000'), // ✅ Clé corrigée
       type: t('consultation')
     },
     {
       title: t('respiratory_physiotherapy'),
       description: t('respiratory_physiotherapy_desc'),
-      image: "/Rectangle 6.png",
-      equipment: t('spirometer_drainage'),
-      schedule: t('mon_fri_8_18') + ', ' + t('by_appointment'),
-      doctor: t('dr_mariem_ba'),
+      image: "/Rectangle 2.png",
+      doctor: t('dr_khadija_faye'),
       price: t('session_1500'),
       type: t('session')
     },
     {
       title: t('psychiatry'),
       description: t('psychiatry_desc'),
-      image: "/Rectangle 7.png",
-      equipment: t('consultation_office'),
-      schedule: t('tue_thu_14_20') + ', ' + t('by_appointment'),
-      doctor: t('dr_mohamed_kane'),
-      price: t('consultation_4000'),
+      image: "/user-cover-3.png",
+      doctor: t('dr_mamoudou_mohamed_kane'), // ✅ Clé corrigée
+      price: t('consultation_500'),
       type: t('consultation')
     },
     {
       title: t('urology'),
       description: t('urology_desc'),
-      image: "/Rectangle 8.png",
-      equipment: t('ultrasound_urological'),
-      schedule: t('mon_wed_15_19') + ', ' + t('by_appointment'),
-      doctor: t('dr_oumar_diallo'),
-      price: t('consultation_3500'),
+      image: "/urologue-toulouse.jpg",
+      doctor: t('dr_habiboulah'),
+      price: t('consultation_1000'), // ✅ Clé corrigée
       type: t('consultation')
     },
     {
       title: t('infectiology'),
       description: t('infectiology_desc'),
-      image: "/Rectangle 9.png",
-      equipment: t('rapid_tests'),
-      schedule: t('mon_thu_15_22') + ', ' + t('emergency_24_7'),
+      image: "/couverture-3.jpg",
       doctor: t('dr_hachim_kebe'),
-      price: t('consultation_3000'),
+      price: t('consultation_1000'), // ✅ Clé corrigée
       type: t('consultation')
     },
     {
       title: t('occupational_medicine'),
       description: t('occupational_medicine_desc'),
-      image: "/Rectangle 10.png",
-      equipment: t('audiometer_spirometer'),
-      schedule: t('mon_fri_8_17') + ', ' + t('company_appointment'),
-      doctor: t('dr_ahmed_fall'),
-      price: t('assessment_5000'),
+      image: "/1648445485574.png",
+      doctor: t('dr_mohamed_yahya_bowba_et_dr_amadou_kane'), // ✅ Clé corrigée
+      price: t('assessment_1000'), // ✅ Clé corrigée
       type: t('assessment')
     }
   ]
@@ -109,34 +93,21 @@ const Services = () => {
           {services.map((service, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
               <div className="relative h-48">
-                <img 
-                  src={service.image} 
+                <img
+                  src={service.image}
                   alt={service.title}
                   className="w-full h-full object-cover"
                 />
               </div>
-              
+
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-800 mb-3">
                   {service.title}
                 </h3>
-                
+
                 <p className="text-gray-600 mb-4 text-sm">
                   {service.description}
                 </p>
-
-                {/* Équipement */}
-                <div className="flex items-start mb-3">
-                  <Stethoscope className="w-4 h-4 text-green-500 mt-1 mr-2 flex-shrink-0" />
-                  <span className="text-xs text-gray-600">{service.equipment}</span>
-                </div>
-
-                {/* Horaires */}
-                <div className="flex items-start mb-3">
-                  <Clock className="w-4 h-4 text-blue-500 mt-1 mr-2 flex-shrink-0" />
-                  <span className="text-xs text-gray-600">{service.schedule}</span>
-                </div>
-
                 {/* Médecin */}
                 <div className="flex items-start mb-3">
                   <User className="w-4 h-4 text-purple-500 mt-1 mr-2 flex-shrink-0" />
@@ -149,7 +120,7 @@ const Services = () => {
                 </div>
 
                 {/* Bouton Appel */}
-                <Button 
+                <Button
                   onClick={handleCallClick}
                   className="w-full bg-green-500 hover:bg-green-600 text-white"
                 >

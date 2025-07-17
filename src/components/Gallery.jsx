@@ -31,7 +31,7 @@ const Gallery = () => {
     },
     {
       id: 4,
-      src: "/Background image box.png",
+      src: "/equipe.jpg",
       alt: "Formation du personnel",
       category: t('training_category'),
       description: t('continuous_training')

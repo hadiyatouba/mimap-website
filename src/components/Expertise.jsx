@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Users, Briefcase, Heart, Shield, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Users, Briefcase, Heart, Shield, ChevronLeft, ChevronRight, Home, HardHat, UserCheck, Baby } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 const Expertise = () => {
@@ -8,7 +8,7 @@ const Expertise = () => {
 
   const expertises = [
     {
-      icon: Heart,
+      icon: Home, // Icône maison pour "Santé de la famille"
       title: t('family_health'),
       description: t('family_health_desc'),
       color: "bg-green-100",
@@ -16,7 +16,7 @@ const Expertise = () => {
       bgCard: "bg-white"
     },
     {
-      icon: Briefcase,
+      icon: HardHat, // Changé de Briefcase à HardHat pour "Santé au travail"
       title: t('occupational_health'),
       description: t('occupational_health_desc'),
       color: "bg-blue-100",
@@ -24,7 +24,7 @@ const Expertise = () => {
       bgCard: "bg-blue-600 text-white"
     },
     {
-      icon: Users,
+      icon: Users, // Icône communauté (groupe de personnes)
       title: t('community_health'),
       description: t('community_health_desc'),
       color: "bg-orange-100",
