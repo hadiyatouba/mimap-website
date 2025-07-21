@@ -1,4 +1,4 @@
-import { Heart, Phone, Mail, MapPin, Facebook, Instagram, Linkedin, ArrowUp, Stethoscope } from 'lucide-react';
+import { Heart, Phone, Mail, MapPin, Facebook, Instagram, Linkedin, ArrowUp } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const Footer = () => {
