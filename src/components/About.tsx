@@ -201,13 +201,13 @@ const About = () => {
           </div>
 
           {/* Vidéo - Responsive et améliorée */}
-          <div className={`w-full xl:w-3/5 xl:flex-shrink-0 transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
+          <div className={`w-full xl:w-3/5 xl:flex-shrink-0 transform transitio n-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
             <div className="relative max-w-5xl mx-auto xl:mx-0 h-full">
               <div className="relative w-full h-full">
                 <div className="aspect-video bg-gradient-to-br from-blue-100 via-indigo-50 to-green-100 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 border border-blue-200/30 group">
                   <video
                     controls
-                    className="w-full h-full object-fill group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-fill "
                     preload="metadata"
                     poster="/Rectangle 11.png"
                   >

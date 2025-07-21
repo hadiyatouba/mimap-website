@@ -17,7 +17,7 @@ const Testimonials = () => {
     },
     {
       name: "Kinross Tasiast",
-      role: "Partenaire institutionnel",
+      role: "Partenaire industriel",
       content: "MIMAP a fourni des services de santé au travail exceptionnels pour nos équipes. Leur expertise est remarquable.",
       rating: 5,
       image: "https://lecalame.info/sites/default/files/kinross%20tasiast_1.png",
@@ -27,8 +27,8 @@ const Testimonials = () => {
     },
     {
       name: "Banque Mondiale",
-      role: "Partenaire industriel",
-      content: "Les formations BLS/CPR dispensées par MIMAP ont considérablement amélioré la sécurité sur nos sites.",
+      role: "Partenaire institutionnel",
+      content: "Merci à Mauritania Internal Medicine and Pediatrics (MIMAP) pour deux excellentes sessions de formation en Réanimation Cardio-pulmonaire (RCR) et Basic Life Support (BLS) pour le personnel du bureau de la Banque mondiale en Mauritanie.Des formateurs expérimentés, des contenus adaptés, des exercices pratiques pertinents — une expérience professionnelle et enrichissante, saluée par tous les participants.Je recommande vivement cette équipe pour toute formation BLS et RCR.",
       rating: 5,
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuTRpMVHHf9-NPAXTStkujbW38fSD4HeNBZQ&s",
       type: "institutional",

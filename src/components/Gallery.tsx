@@ -15,11 +15,18 @@ const Gallery = () => {
       category: "Équipe",
       gradient: "from-blue-500 to-blue-600"
     },
+     {
+      type: 'image',
+      src: "/khadija_faye_WA0005.jpg",
+      alt: "Directrice MIMAP",
+      category: "Interview Kassataya",
+      gradient: "from-orange-500 to-orange-600"
+    },
     {
       type: 'image',
-      src: "/Background image box (3).png",
-      alt: "Consultation pédiatrique",
-      category: "Pédiatrie",
+      src: "/491523089_1198885492025560_5931773069961017682_n.jpg",
+      alt: "Nettoyage d'oreille professionnel avec irrigation.",
+      category: "Nettoyage d'oreille",
       gradient: "from-pink-500 to-pink-600"
     },
     {
@@ -32,23 +39,16 @@ const Gallery = () => {
     {
       type: 'image',
       src: "/equipe.jpg",
-      alt: "Consultation psychiatrique",
-      category: "Psychiatrie",
+      alt: "Journée mondiale du diabète",
+      category: "Journée mondiale",
       gradient: "from-purple-500 to-purple-600"
     },
     {
       type: 'image',
-      src: "/e2ca10f8-8b14-438e-a9e8-b5ef048aac44.jpg",
+      src: "/WhatsApp Image 2025-07-18 at 18.48.48 (1).jpeg",
       alt: "Consultation en kinésithérapie respiratoire",
       category: "Kinésithérapie respiratoire",
       gradient: "from-teal-500 to-teal-600"
-    },
-    {
-      type: 'image',
-      src: "/khadija_faye_WA0005.jpg",
-      alt: "Directrice MIMAP",
-      category: "Interview Kassataya",
-      gradient: "from-orange-500 to-orange-600"
     }
   ];
 

@@ -7,6 +7,14 @@ const Team = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const doctors = [
+     {
+      name: "Khadija Faye MBA,RRT",
+      specialty: "Kinésithérapeute respiratoire",
+      diplôme: "spécialisé en kinésithérapie respiratoire, en pédiatrie et néonatalogie",
+      image: "/WhatsApp Image 2025-07-18 at 18.01.24.jpeg",
+      specialtyColor: "from-cyan-500 to-cyan-600",
+      icon: Users
+    },
     {
       name: "Dr. Amadou Kane",
       specialty: "Médecin de famille et généraliste",
@@ -49,16 +57,16 @@ const Team = () => {
     },
     {
       name: "Dr. Cheikh Diouf",
-      specialty: "Généraliste et Médecine du sport",
+      specialty: "Généraliste, Médecine du sport et de la Drepanocytologue",
       diplôme: "Diplôme d'état de médecine générale, Spécialisation en médecine du sport",
-      image: "/Box 3.png",
+      image: "/WhatsApp Image 2025-07-21 at 13.00.28.jpeg",
       specialtyColor: "from-orange-500 to-orange-600",
       icon: Award
     },
     {
       name: "Dr. Mohamed Yahya Bowba",
       specialty: "Généraliste",
-      diplôme: "Diplôme de spécialité en urologie",
+      diplôme: "Diplôme d'État de docteur en médecine générale",
       image: "/medecin-1024x576.jpg",
       specialtyColor: "from-teal-500 to-teal-600",
       icon: Stethoscope
@@ -78,15 +86,8 @@ const Team = () => {
       image: "/fixed-height sec-.png",
       specialtyColor: "from-emerald-500 to-emerald-600",
       icon: Award
-    },
-    {
-      name: "Khadija Faye",
-      specialty: "Kinésithérapeute respiratoire",
-      diplôme: "Diplôme de kinésithérapie respiratoire",
-      image: "/WhatsApp Image 2025-07-18 at 18.01.24.jpeg",
-      specialtyColor: "from-cyan-500 to-cyan-600",
-      icon: Users
     }
+   
   ];
 
   // Observer pour les animations
