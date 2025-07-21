@@ -223,7 +223,6 @@ const Footer = () => {
                 <div className="text-sm text-blue-200">
                   <p>• Banque Mondiale</p>
                   <p>• Kinross Tasiast</p>
-                  <p>• Aura Energy</p>
                 </div>
               </div>
 

@@ -7,7 +7,7 @@ const Gallery = () => {
   const [itemsPerSlide, setItemsPerSlide] = useState(4);
   const [isVisible, setIsVisible] = useState(false);
 
-  const galleryItems = [
+   const galleryItems = [
     {
       type: 'image',
       src: "/Rectangle 11.png",
@@ -31,21 +31,21 @@ const Gallery = () => {
     },
     {
       type: 'image',
-      src: "/malade.png",
+      src: "/equipe.jpg",
       alt: "Consultation psychiatrique",
       category: "Psychiatrie",
       gradient: "from-purple-500 to-purple-600"
     },
     {
       type: 'image',
-      src: "/terapetique.avif",
+      src: "/e2ca10f8-8b14-438e-a9e8-b5ef048aac44.jpg",
       alt: "Consultation en kinésithérapie respiratoire",
       category: "Kinésithérapie respiratoire",
       gradient: "from-teal-500 to-teal-600"
     },
     {
       type: 'image',
-      src: "/Rectangle 22.png",
+      src: "/khadija_faye_WA0005.jpg",
       alt: "Directrice MIMAP",
       category: "Interview Kassataya",
       gradient: "from-orange-500 to-orange-600"
