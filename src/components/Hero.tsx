@@ -66,7 +66,7 @@ const Hero = () => {
           </div>
 
           {/* Section droite : Image */}
-          <div className="absolute right-[-215px] w-2/4 h-full mt-20 sm:mt-56 ">
+          <div className="absolute right-[-215px] w-3/5 h-full mt-20 sm:mt-56 ">
             <div className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
               <img
                 src="/Image docteur.png"
