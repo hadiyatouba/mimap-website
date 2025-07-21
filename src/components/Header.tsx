@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail, MapPin, Stethoscope} from 'lucide-react';
+import { Menu, X, Phone, Mail, MapPin} from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -89,16 +89,19 @@ const Header = () => {
       <nav className={`container mx-auto px-4 transition-all duration-500 ${isScrolled ? 'py-3' : 'py-4'}`}>
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <div className={`bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold mr-3 shadow-lg transition-all duration-500 ${isScrolled ? 'w-10 h-10 text-lg' : 'w-12 h-12 text-xl'}`}>
-              <Stethoscope className={`transition-all duration-500 ${isScrolled ? 'w-5 h-5' : 'w-6 h-6'}`} />
-            </div>
-            <div>
-              <h1 className={`font-bold bg-gradient-to-r from-blue-900 to-indigo-800 bg-clip-text text-transparent transition-all duration-500 ${isScrolled ? 'text-lg' : 'text-xl'}`}>
-                MIMAP
-              </h1>
-              <p className={`text-blue-600 font-medium transition-all duration-500 ${isScrolled ? 'text-xs' : 'text-sm'}`}>
-                💙 Votre santé, notre priorité
-              </p>
+            <div className="flex items-center">
+              <img 
+                src="/ogoMIMAP by Toutou [Récupéré]_Plan de travail 1.png" 
+                alt="MIMAP Logo" 
+                className={`h-10 w-60 object-cover transition-all duration-500 ${isScrolled ? 'h-12 sm:h-12' : 'h-12 sm:h-16'}`}
+                onError={(e) => {
+                  const img = e.target as HTMLImageElement;
+                  img.style.display = 'none';
+                  if (img.nextElementSibling) {
+                    (img.nextElementSibling as HTMLElement).style.display = 'flex';
+                  }
+                }}
+              />
             </div>
           </div>
 

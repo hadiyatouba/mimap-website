@@ -96,7 +96,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer id="footer" className="bg-blue-900 text-white relative overflow-hidden">
+      <footer id="footer" className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white relative overflow-hidden">
         {/* Éléments décoratifs */}
         <div className="absolute top-0 left-0 w-32 h-32 sm:w-48 sm:h-48 bg-gradient-to-br from-blue-400/20 to-indigo-400/20 rounded-full -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
         <div className="absolute bottom-0 right-0 w-24 h-24 sm:w-40 sm:h-40 bg-gradient-to-tl from-indigo-400/20 to-blue-400/20 rounded-full translate-x-1/2 translate-y-1/2 animate-bounce" style={{animationDuration: '6s'}}></div>
@@ -110,14 +110,21 @@ const Footer = () => {
             {/* Colonne 1: Logo et Description */}
             <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
               <div className="flex items-center mb-4 sm:mb-6">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl mr-3 shadow-lg">
-                  <Stethoscope className="w-5 h-5 sm:w-6 sm:h-6" />
-                </div>
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
-                    MIMAP
-                  </h3>
-                  <p className="text-blue-200 text-sm">💙 Votre santé, notre priorité</p>
+                  <div className="mb-3">
+                    <img 
+                      src="/ogoMIMAP by Toutou [Récupéré]_Plan de travail 1.png" 
+                      alt="MIMAP Logo" 
+                      className="h-14 w-60 bg-white rounded-full sm:h-16 w-auto object-contain "
+                      onError={(e) => {
+                        const img = e.target as HTMLImageElement;
+                        img.style.display = 'none';
+                        if (img.nextElementSibling) {
+                          (img.nextElementSibling as HTMLElement).style.display = 'flex';
+                        }
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
               
@@ -223,6 +230,7 @@ const Footer = () => {
                 <div className="text-sm text-blue-200">
                   <p>• Banque Mondiale</p>
                   <p>• Kinross Tasiast</p>
+                  <p>• Aura Energy</p>
                 </div>
               </div>
 
